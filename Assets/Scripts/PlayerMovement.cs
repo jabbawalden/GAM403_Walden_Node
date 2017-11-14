@@ -51,8 +51,16 @@ public class PlayerMovement : MonoBehaviour {
 		//this function now has a force added to it?
 
 	}
-	
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit obstacle");
+        }
+    }
+
+  
 
 
 
