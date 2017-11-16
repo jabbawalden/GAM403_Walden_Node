@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPath : MonoBehaviour {
+public class FollowPath : MonoBehaviour
+{
 
-	public enum MovementType
+    public enum MovementType
     {
         MoveTowards,
         LerpTowards
-        
+
     }
 
     public MovementType Type = MovementType.MoveTowards;
     public PathEditor MyPath;
-    public float Speed = 1; 
+    public float Speed = 1;
     public float MaxDistanceToGoal = .1f; //how close it needs to be to the point to be
     //considered at the point
 
@@ -61,8 +62,8 @@ public class FollowPath : MonoBehaviour {
             //move to next point in path using MoveTowards
             transform.position =
                 Vector3.MoveTowards(transform.position,
-                pointInPath.Current.position, Time.deltaTime * Speed);           
-            
+                pointInPath.Current.position, Time.deltaTime * Speed);
+
         }
         else if (Type == MovementType.LerpTowards)
         {
@@ -76,7 +77,7 @@ public class FollowPath : MonoBehaviour {
 
         //Uses math stuff that I don't really understand (Pythagorean Theorem)
         //Basically checks to see if we are close enough to next point before we move to following one
-       
+
         var distanceSquared = (transform.position - pointInPath.Current.position).sqrMagnitude;
         if (distanceSquared < MaxDistanceToGoal * MaxDistanceToGoal)
         {

@@ -43,7 +43,9 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		
 		rb.velocity = Vector2.zero;
-		//resets the velocity when player is not inputting
+        //resets the velocity when player is not inputting
+
+       // print(rb.velocity);
 
 		rb.AddForce (pForce, ForceMode2D.Impulse);
 		//adds force to pForce, with ForceMode2D.Impulse - changes the force mode to instant.

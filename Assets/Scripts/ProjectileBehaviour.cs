@@ -7,6 +7,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public Rigidbody2D rb;
     public float speed;
     public GameObject projectile;
+    public GameObject projectileHolder;
 
 	void Start ()
     {
@@ -34,8 +35,18 @@ public class ProjectileBehaviour : MonoBehaviour {
 		rb.velocity = direction;
 		//sends velocity in direciton 
 
-	} 
+	}
 
+    void Update()
+    {
+        DestroyObjectDelayed();
+    }
+
+    void DestroyObjectDelayed ()
+    {
+
+        Destroy(projectileHolder, 3);
+    }
     /* 
      private void OnTriggerEnter(Collider other)
     {
