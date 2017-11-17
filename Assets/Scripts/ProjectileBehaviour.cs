@@ -18,7 +18,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 		var mousePosition = Input.mousePosition; 
 
 
-		print (Camera.main); 
+		
 
 	
 		Vector3 wp = Camera.main.ScreenToWorldPoint (new Vector3(mousePosition.x, mousePosition.y, 0f)); 

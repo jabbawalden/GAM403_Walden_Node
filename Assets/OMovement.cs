@@ -10,22 +10,69 @@ public class OMovement : MonoBehaviour {
     public Transform P2;
     bool moveRight;
     bool moveLeft;
-    float speed = 2;
+    public float speed = 4;
 
     private void Start()
     {
-        transform.position = P1.transform.position;
-        moveRight = true;
+        transform.position = P1.transform.position;      
         moveLeft = false;
     }
 
     void Update()
     {
         float eSpeed = speed * Time.deltaTime;
-
-      if (moveRight == true)
-       transform.position = Vector2.MoveTowards(transform.position, P2.position, eSpeed);
         
+
+
+        if (transform.position == P1.transform.position)
+        {
+            moveLeft = false;
+        }
+           
+
+        if (transform.position == P2.transform.position)
+        {
+            moveLeft = true;
+        }
+
+         
+
+        if (moveLeft)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
+
+        } else 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, P2.position, eSpeed);
+       
+        }
+
+        /* if (transform.position == P1.transform.position) 
+         { 
+             transform.position = Vector2.MoveTowards(transform.position, P2.position, eSpeed);
+         } else 
+         if (transform.position == P2.transform.position)
+         {
+             transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
+         }
+
+        if (moveLeft == false)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, P2.position, eSpeed);
+            
+        } else if (moveLeft == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
+        }
+
+      */
+
+    }
+
+
+
+    /*
+     *       
       if (moveLeft == true)
        transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
 
@@ -34,12 +81,6 @@ public class OMovement : MonoBehaviour {
             print("at position 1");
         }
 
-     
-
-    }
-
-    /*
-     * 
      * if (transform.position == P2.transform.position)
         {
             transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
