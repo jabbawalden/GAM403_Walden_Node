@@ -12,14 +12,14 @@ public class EProjectileBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		
+       
 
-	}
+    }
 	
 
     void Update()
     {
-        rb.AddForce (projectile.transform.up * speed * Time.deltaTime, ForceMode2D.Impulse );
+        rb.AddForce(projectile.transform.up * speed * Time.deltaTime, ForceMode2D.Impulse);
         DestroyObjectDelayed();
     }
 
