@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyGunTrigger : MonoBehaviour {
 
+    bool playerIsHere;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             print("player is here");
+            playerIsHere = true;
         }
     }
 
@@ -17,7 +19,8 @@ public class EnemyGunTrigger : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("player has left"); 
+            print("player has left");
+            playerIsHere = false;
         }
     }
 
