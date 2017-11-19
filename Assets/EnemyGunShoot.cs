@@ -14,8 +14,10 @@ public class EnemyGunShoot : MonoBehaviour {
     private void Update()
     {
         if (Time.time > nextFire)
-        nextFire = Time.time + fireRate;
-        GameObject pClone = Instantiate(enemyProjectile, eSOrigin.position, eSOrigin.rotation) as GameObject;
+        {
+            nextFire = Time.time + fireRate;
+            GameObject pClone = Instantiate(enemyProjectile, eSOrigin.position, eSOrigin.rotation) as GameObject;
+        }
         
     }
 
