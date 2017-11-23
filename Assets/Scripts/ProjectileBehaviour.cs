@@ -8,6 +8,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float speed;
     public GameObject projectile;
     public GameObject projectileHolder;
+    
 
 	void Start ()
     {
@@ -16,10 +17,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 
 
 		var mousePosition = Input.mousePosition; 
-
-
-		
-
+    
 	
 		Vector3 wp = Camera.main.ScreenToWorldPoint (new Vector3(mousePosition.x, mousePosition.y, 0f)); 
 			//wp equals mouse position on x and y on screen space 
@@ -33,7 +31,10 @@ public class ProjectileBehaviour : MonoBehaviour {
 		direction *= speed; //direction = direction * speed 
 		//rb.velocity = Vector2.MoveTowards (transform.position, target, speed); 
 		rb.velocity = direction;
-		//sends velocity in direciton 
+        //sends velocity in direciton 
+
+        
+        
 
 	}
 
@@ -58,5 +59,23 @@ public class ProjectileBehaviour : MonoBehaviour {
 
     }
     */
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+
+            if (collision.gameObject.tag == "EProj")
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+
+        }
+    }
 
 }

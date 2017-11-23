@@ -34,6 +34,28 @@ public class EProjectileBehaviour : MonoBehaviour {
         Destroy(projectileHolder, 3);
     }
 
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+
+            if (collision.gameObject.tag == "PProj")
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+
+        }
+    }
+
+
+
+
     /*
  * var mousePosition = Input.mousePosition; 
 
