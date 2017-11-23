@@ -12,14 +12,14 @@ public class IgnoreCol : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        Physics2D.IgnoreCollision(pProjectileCol.GetComponent<Collider2D>(), playerCol.GetComponent<Collider2D>());
 
-        
 
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Physics2D.IgnoreCollision(pProjectileCol.GetComponent<Collider2D>(), playerCol.GetComponent<Collider2D>());
+        
     }
 }
