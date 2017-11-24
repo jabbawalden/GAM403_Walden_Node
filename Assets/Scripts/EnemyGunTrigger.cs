@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGunTrigger : MonoBehaviour {
 
     bool playerIsHere;
-    public EnemyGunShoot eGunR;
+    public FourWayGun eGunR;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
