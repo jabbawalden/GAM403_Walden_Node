@@ -20,8 +20,7 @@ public class OMovement : MonoBehaviour {
 
     void Update()
     {
-        float eSpeed = speed * Time.deltaTime;
-        
+        float deltaPosition = speed * Time.deltaTime;        
 
 
         if (transform.position == P1.transform.position)
@@ -39,11 +38,11 @@ public class OMovement : MonoBehaviour {
 
         if (moveLeft)
         {
-            transform.position = Vector2.MoveTowards(transform.position, P1.position, eSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, P1.position, deltaPosition);
 
         } else 
         {
-            transform.position = Vector2.MoveTowards(transform.position, P2.position, eSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, P2.position, deltaPosition);
        
         }
 

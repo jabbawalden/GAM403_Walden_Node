@@ -46,7 +46,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     void DestroyObjectDelayed ()
     {
 
-        Destroy(projectileHolder, 3);
+        Destroy(projectileHolder, 0.8f);
     }
     /* 
      private void OnTriggerEnter(Collider other)

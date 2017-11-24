@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyGunTrigger : MonoBehaviour {
 
     bool playerIsHere;
+    public EnemyGunShoot eGunR;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class EnemyGunTrigger : MonoBehaviour {
         {
             print("player is here");
             playerIsHere = true;
+            eGunR.shooting = true;      
         }
     }
 
@@ -21,6 +23,7 @@ public class EnemyGunTrigger : MonoBehaviour {
         {
             print("player has left");
             playerIsHere = false;
+            eGunR.shooting = false;
         }
     }
 

@@ -8,23 +8,14 @@ public class EProjectileBehaviour : MonoBehaviour {
     public float speed;
     public GameObject projectile; 
     public GameObject projectileHolder;
-    public Transform eSTarget;
-    
-
-    // Use this for initialization
-    void Start ()
-    {
-        speed = speed * Time.deltaTime;
-        
-
-
-    }
+ 
+   
 	
 
-    void Update()
+    void Start ()
     {
     
-        rb.AddForce(projectile.transform.up * speed, ForceMode2D.Impulse);
+        rb.velocity = - projectile.transform.up * speed;
         DestroyObjectDelayed();
     }
 
@@ -39,8 +30,7 @@ public class EProjectileBehaviour : MonoBehaviour {
     {
         {
             if (collision.gameObject.tag == "Player")
-            {
-                Destroy(collision.gameObject);
+            {                
                 Destroy(gameObject);
             }
 
@@ -50,6 +40,11 @@ public class EProjectileBehaviour : MonoBehaviour {
                 Destroy(gameObject);
             }
 
+            if (collision.gameObject.tag == "Environment")
+            {
+                
+                Destroy(gameObject);
+            }
         }
     }
 

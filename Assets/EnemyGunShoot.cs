@@ -10,15 +10,25 @@ public class EnemyGunShoot : MonoBehaviour {
     public float damage;
     float nextFire = 0;
     public EnemyGunTrigger trigger;
+    public bool shooting = false;
 
-    private void Update()
+    void Update()
+    {
+        if (shooting)
+        {
+            EnemyShoot();
+        }
+        
+        
+    }
+
+    void EnemyShoot()
     {
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             GameObject pClone = Instantiate(enemyProjectile, eSOrigin.position, eSOrigin.rotation) as GameObject;
         }
-        
     }
 
 

@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour {
     public BoxCollider2D bc; //box collider variable
     public float speed; //speed of movement float
 	private Vector2 axisForce; //will hold axis horizontal and vertical
-    //Vectors hold directional values.
+                               //Vectors hold directional values.
+    public PlayerShoot pShoot;
+    
 
 	// Use this for initialization
 	void Update ()
@@ -59,6 +61,15 @@ public class PlayerMovement : MonoBehaviour {
         if (collision.collider.CompareTag("Obstacle"))
         {
             Debug.Log("Hit obstacle");
+            FindObjectOfType<GameState>().EndGame();
+           
+        }
+
+        if (collision.collider.CompareTag("EProj"))
+        {
+            speed = 0f;
+            FindObjectOfType<GameState>().EndGame();
+            pShoot.alive = false;
         }
     }
 
