@@ -8,6 +8,7 @@ public class EProjectileBehaviour : MonoBehaviour {
     public float speed;
     public GameObject projectile; 
     public GameObject projectileHolder;
+    private PlayerMovement playerHealth;
  
    
 	
@@ -17,6 +18,7 @@ public class EProjectileBehaviour : MonoBehaviour {
     
         rb.velocity = - projectile.transform.up * speed;
         DestroyObjectDelayed();
+        playerHealth = FindObjectOfType<PlayerMovement>();
     }
 
     void DestroyObjectDelayed()
@@ -32,6 +34,7 @@ public class EProjectileBehaviour : MonoBehaviour {
             if (collision.gameObject.tag == "Player")
             {                
                 Destroy(gameObject);
+                playerHealth.health = playerHealth.health - 1;
             }
 
             if (collision.gameObject.tag == "PProj")

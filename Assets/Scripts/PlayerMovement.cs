@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector2 axisForce; //will hold axis horizontal and vertical
                                //Vectors hold directional values.
     public PlayerShoot pShoot;
-    
+    public int health = 3;
 
 	// Use this for initialization
 	void Update ()
@@ -62,14 +62,18 @@ public class PlayerMovement : MonoBehaviour {
         {
             Debug.Log("Hit obstacle");
             FindObjectOfType<GameState>().EndGame();
-           
+            speed = 0;
         }
 
         if (collision.collider.CompareTag("EProj"))
         {
-            speed = 0f;
-            FindObjectOfType<GameState>().EndGame();
-            pShoot.alive = false;
+            if (health == 0)
+            {
+                speed = 0f;
+                FindObjectOfType<GameState>().EndGame();
+                pShoot.alive = false;
+            }
+            
         }
     }
 

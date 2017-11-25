@@ -75,6 +75,11 @@ public class ProjectileBehaviour : MonoBehaviour {
                 Destroy(gameObject);
             }
 
+            if (collision.gameObject.tag == "Environment")
+            {               
+                Destroy(gameObject);
+            }
+
         }
     }
 

@@ -9,7 +9,7 @@ public class EnemyGunShoot : MonoBehaviour {
     public float fireRate;
     public float damage;
     float nextFire = 0;
-    public EnemyGunTrigger trigger;
+    public EnemyTrigger trigger;
     public bool shooting = false;
 
     void Update()
