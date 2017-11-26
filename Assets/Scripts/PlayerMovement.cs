@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -11,13 +12,22 @@ public class PlayerMovement : MonoBehaviour {
                                //Vectors hold directional values.
     public PlayerShoot pShoot;
     public int health = 3;
+    public GameObject youLose;
+    bool dead = false;
+    
 
 	// Use this for initialization
 	void Update ()
     {
 		PInput (); //calls Player Input Function into update (per frame)
 
-
+        if (dead == true)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
 
 	//detects player input
@@ -60,9 +70,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
-            Debug.Log("Hit obstacle");
-            FindObjectOfType<GameState>().EndGame();
+            Debug.Log("Hit obstacle");            
             speed = 0;
+            dead = true;
+            youLose.SetActive(true);
+            pShoot.alive = false;
         }
 
         if (collision.collider.CompareTag("EProj"))
@@ -70,10 +82,21 @@ public class PlayerMovement : MonoBehaviour {
             if (health == 0)
             {
                 speed = 0f;
-                FindObjectOfType<GameState>().EndGame();
+                youLose.SetActive(true);
                 pShoot.alive = false;
+                dead = true;               
+                                          
             }
             
+        }
+
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            speed = 0f;
+            youLose.SetActive(true);
+            pShoot.alive = false;
+            dead = true;
+            bc.enabled = false;
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
+    
     public bool gameHasEnded = false;
     public float restartDelay;
     
@@ -15,6 +16,8 @@ public class GameState : MonoBehaviour {
         {
             gameHasEnded = true;
             Invoke("Restart", restartDelay);
+        
+           
         }
 
     }
@@ -23,5 +26,6 @@ public class GameState : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
 	
 }

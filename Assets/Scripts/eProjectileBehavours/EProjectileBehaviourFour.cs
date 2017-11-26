@@ -38,7 +38,7 @@ public class EProjectileBehaviourFour : MonoBehaviour {
                 Destroy(gameObject);
             }
 
-            if (collision.gameObject.tag == "Environment")
+            if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Obstacle")
             {
 
                 Destroy(gameObject);
