@@ -19,6 +19,10 @@ public class EnemyGunShoot : MonoBehaviour {
             EnemyShoot();
         }
         
+        if (trigger.playerIsHere == true)
+        {
+            shooting = true;
+        }
         
     }
 
@@ -28,6 +32,7 @@ public class EnemyGunShoot : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
             GameObject pClone = Instantiate(enemyProjectile, eSOrigin.position, eSOrigin.rotation) as GameObject;
+            
         }
     }
 

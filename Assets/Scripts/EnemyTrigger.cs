@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour {
 
-    bool playerIsHere;
-    public EnemyGunShoot eGun;
+    public bool playerIsHere;
+    
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +13,7 @@ public class EnemyTrigger : MonoBehaviour {
         {
             print("player is here");
             playerIsHere = true;
-            eGun.shooting = true;
+            
         }
     }
 
@@ -23,7 +23,7 @@ public class EnemyTrigger : MonoBehaviour {
         {
             print("player has left");
             playerIsHere = false;
-            eGun.shooting = false;
+            
         }
     }
 }
