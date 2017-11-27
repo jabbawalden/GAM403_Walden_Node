@@ -13,7 +13,7 @@ public class EProjectileBehaviourFour : MonoBehaviour {
     void Start()
     {
 
-        rb.velocity = new Vector3(projectile.transform.position.x, 0, 0 * speed);
+        rb.velocity = new Vector3(projectile.transform.position.x * speed, 0, 0);
         DestroyObjectDelayed();
         playerHealth = FindObjectOfType<PlayerMovement>();
     }

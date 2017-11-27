@@ -8,17 +8,38 @@ public class GameState : MonoBehaviour {
     
     public bool gameHasEnded = false;
     public float restartDelay;
+    public bool weHaveWon = false;
+    public Collectable collectable;
     
 
-    public void EndGame()
+    void Update()
+    {
+        if (collectable.haveBeenCollected == true)
+        {
+            weHaveWon = true; 
+
+        }
+
+        if (Input.GetKeyDown("space") && collectable.haveBeenCollected == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+        }
+
+
+    }
+
+    /*public void EndGame()
     {
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Invoke("Restart", restartDelay);
-        
+            Invoke("Restart", restartDelay);       
            
         }
+
+
+     
 
     }
 
@@ -26,6 +47,7 @@ public class GameState : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    */
     
-	
 }

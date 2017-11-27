@@ -14,6 +14,13 @@ public class PlayerMovement : MonoBehaviour {
     public int health = 3;
     public GameObject youLose;
     bool dead = false;
+    public GameState gameManager;
+    public GameObject youWinUI;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameState>();
+    }
 
     // Use this for initialization
     void Update ()
@@ -30,11 +37,18 @@ public class PlayerMovement : MonoBehaviour {
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-               
-
-
+              
             }
         }
+
+        if (gameManager.weHaveWon == true)
+        {
+            speed = 0;
+            pShoot.alive = false;
+            youWinUI.SetActive(true);
+        }
+
+
     }
 
 	//detects player input
