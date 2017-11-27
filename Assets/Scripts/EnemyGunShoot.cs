@@ -23,7 +23,12 @@ public class EnemyGunShoot : MonoBehaviour {
         {
             shooting = true;
         }
-        
+
+        if (trigger.playerIsHere == false)
+        {
+            shooting = false;
+        }
+
     }
 
     void EnemyShoot()

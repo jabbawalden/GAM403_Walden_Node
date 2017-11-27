@@ -14,18 +14,25 @@ public class PlayerMovement : MonoBehaviour {
     public int health = 3;
     public GameObject youLose;
     bool dead = false;
-    
 
-	// Use this for initialization
-	void Update ()
+    // Use this for initialization
+    void Update ()
     {
-		PInput (); //calls Player Input Function into update (per frame)
+        
+
+        
+
+        PInput (); //calls Player Input Function into update (per frame)
 
         if (dead == true)
         {
             if (Input.GetKey(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+               
+
+
             }
         }
     }
