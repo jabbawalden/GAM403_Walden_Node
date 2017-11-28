@@ -17,7 +17,6 @@ public class PlayerShoot : MonoBehaviour {
 	void Start () 
     {
 
-        
 
     }
 	

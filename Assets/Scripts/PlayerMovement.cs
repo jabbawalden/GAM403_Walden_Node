@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour {
     public GameState gameManager;
     public GameObject youWinUI;
 
+    public GameObject hEqualsOne;
+    public GameObject hEqualsTwo;
+    public GameObject hEqualsThree; 
+
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameState>();
@@ -48,11 +53,27 @@ public class PlayerMovement : MonoBehaviour {
             youWinUI.SetActive(true);
         }
 
+        if (health == 2)
+        {
+            hEqualsThree.SetActive(false);
 
+        }
+
+        if (health == 1)
+        {
+            hEqualsTwo.SetActive(false);
+
+        }
+
+        if (health == 0)
+        {
+            hEqualsOne.SetActive(false);
+
+        }
     }
 
-	//detects player input
-	void PInput ()
+    //detects player input
+    void PInput ()
 	{
 		//GetAxis calls the inbuilt Unity Axis for movement directions
 		float H = Input.GetAxis("Horizontal");
