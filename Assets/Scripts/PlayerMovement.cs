@@ -19,11 +19,12 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject hEqualsOne;
     public GameObject hEqualsTwo;
-    public GameObject hEqualsThree; 
+    public GameObject hEqualsThree;
+    public Transform playerPosition;
 
 
     private void Start()
-    {
+    {      
         gameManager = FindObjectOfType<GameState>();
     }
 
