@@ -7,11 +7,13 @@ public class GameController : MonoBehaviour {
 
     public static GameController control;
     public int maxHealth;
-    public int techParts;
+    public int techCollected;
+    public int playerSpeed;
     public Text techShow;
     public GameObject upgradePanel;  
     bool panelCheck = false;
-    public Button healthButton;
+    
+    
 
     void Awake()
     {
@@ -50,7 +52,7 @@ public class GameController : MonoBehaviour {
 	
 	void Update ()
     {
-        techShow.text = "Tech parts: " + techParts;
+        techShow.text = "Tech Collected: " + techCollected;
     
         if (panelCheck == false)
         {
@@ -69,5 +71,19 @@ public class GameController : MonoBehaviour {
         }
 
     }
+
+    public void HealthClick()
+    {
+        maxHealth++;
+        print("lol");
+    }
+
+
+    public void SpeedClick()
+    {
+        playerSpeed += 2;
+        print("lol");
+    }
+
 
 }

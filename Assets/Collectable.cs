@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour {
 
     public GameObject collectableStone;
     public bool haveBeenCollected = false;
+    public BoxCollider2D bc;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class Collectable : MonoBehaviour {
         {
             Destroy(collectableStone);
             haveBeenCollected = true;
+            bc.enabled = false;
         }
     }
 }

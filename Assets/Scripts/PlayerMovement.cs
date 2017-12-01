@@ -24,12 +24,14 @@ public class PlayerMovement : MonoBehaviour {
     public Transform playerPosition;
     //int healthIncrease;
 
+    public bool stoneHalf1 = false;
+    public bool stoneHalf2 = false;
 
     void Start()
     {      
         gameManager = FindObjectOfType<GameState>();
         health = GameController.control.maxHealth;
-
+        speed = GameController.control.playerSpeed;
     }
 
     // Use this for initialization
@@ -76,13 +78,25 @@ public class PlayerMovement : MonoBehaviour {
         }
         */
 
+
         for(int i = 0; i < healthHearts.Length; i++)
         {
-            if (health == i)
+
+            //if (health == i)
+            //{
+            //    healthHearts[i].SetActive(true);
+            //}
+
+            if (i > health - 1)
             {
                 healthHearts[i].SetActive(false);
             }
-            
+            else
+            {
+                healthHearts[i].SetActive(true);
+            }
+
+
         }
 
         /*if player upgrades, health = healthIncrease (increased in upgrade code)
@@ -159,6 +173,16 @@ public class PlayerMovement : MonoBehaviour {
             pShoot.alive = false;
             dead = true;
             bc.enabled = false;
+            health = 0;
+        }
+
+        if (collision.collider.CompareTag("StoneHalf1"))
+        {
+            stoneHalf1 = true;
+        }
+        if (collision.collider.CompareTag("StoneHalf2"))
+        {
+            stoneHalf2 = true;
         }
     }
 

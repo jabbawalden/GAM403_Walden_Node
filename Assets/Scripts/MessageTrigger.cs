@@ -5,7 +5,7 @@ using UnityEngine;
 public class MessageTrigger : MonoBehaviour {
 
     public GameObject line;
-
+    
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,12 @@ public class MessageTrigger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		if (line == null)
+        {
+            return;
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +29,12 @@ public class MessageTrigger : MonoBehaviour {
             Debug.Log("Player here now");
         }
 
-       
+        //if (collision.CompareTag("Player") && wall == null)
+        //{
+        //    line.SetActive(false);
+        //    Debug.Log("Player here now");
+        //}
+
     }
 
 }
