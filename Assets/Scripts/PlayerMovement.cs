@@ -17,23 +17,27 @@ public class PlayerMovement : MonoBehaviour {
     public GameState gameManager;
     public GameObject youWinUI;
 
-    public GameObject hEqualsOne;
-    public GameObject hEqualsTwo;
-    public GameObject hEqualsThree;
+    public GameObject[] healthHearts;
+    //public GameObject hEqualsOne;
+    //public GameObject hEqualsTwo;
+    //public GameObject hEqualsThree;
     public Transform playerPosition;
+    //int healthIncrease;
 
 
-    private void Start()
+    void Start()
     {      
         gameManager = FindObjectOfType<GameState>();
+        health = GameController.control.maxHealth;
+
     }
 
     // Use this for initialization
     void Update ()
     {
-        
 
-        
+
+       
 
         PInput (); //calls Player Input Function into update (per frame)
 
@@ -41,9 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-              
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);              
             }
         }
 
@@ -54,23 +56,40 @@ public class PlayerMovement : MonoBehaviour {
             youWinUI.SetActive(true);
         }
 
+        /*
         if (health == 2)
         {
-            hEqualsThree.SetActive(false);
+            //hEqualsThree.SetActive(false);
 
         }
 
         if (health == 1)
         {
-            hEqualsTwo.SetActive(false);
+            //hEqualsTwo.SetActive(false);
 
         }
 
         if (health == 0)
         {
-            hEqualsOne.SetActive(false);
+            //hEqualsOne.SetActive(false);
 
         }
+        */
+
+        for(int i = 0; i < healthHearts.Length; i++)
+        {
+            if (health == i)
+            {
+                healthHearts[i].SetActive(false);
+            }
+            
+        }
+
+        /*if player upgrades, health = healthIncrease (increased in upgrade code)
+         * Start Function
+         * 
+         * 
+         */
     }
 
     //detects player input
@@ -143,10 +162,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-  
 
-
-
-
+    
 
 }
