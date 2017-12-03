@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -10,23 +11,28 @@ public class GameController : MonoBehaviour {
     public int techCollected;
     public int playerSpeed;
     public Text techShow;
-    public GameObject upgradePanel;  
+    public GameObject upgradePanel;
     bool panelCheck = false;
     
-    
+
+
 
     void Awake()
     {
+        
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);
             control = this; //this becomes the one object referenced by this variable
-        } else if (control != null)
+        } else if (control != this)
         {
             Destroy(gameObject);
             //if already exists, destroy this - singleton design pattern i.e. there can
             //only be one of these.
         }
+        
+
+       
         
     }
 
@@ -34,6 +40,9 @@ public class GameController : MonoBehaviour {
     {
         DontDestroyOnLoad(gameObject);
         //will persist from scene to scene
+
+       
+
     }
 
     void OnGUI()
@@ -53,7 +62,7 @@ public class GameController : MonoBehaviour {
 	void Update ()
     {
         techShow.text = "Tech Collected: " + techCollected;
-    
+
         if (panelCheck == false)
         {
             upgradePanel.SetActive(false);
@@ -69,6 +78,7 @@ public class GameController : MonoBehaviour {
             panelCheck = !panelCheck;
 
         }
+
 
     }
 

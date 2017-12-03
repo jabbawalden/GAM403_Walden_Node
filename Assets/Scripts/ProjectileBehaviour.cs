@@ -8,6 +8,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float speed;
     public GameObject projectile;
     public GameObject projectileHolder;
+   
     
 
 	void Start ()
@@ -65,6 +66,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Enemy")
             {
+                GameController.control.techCollected += 1;
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
