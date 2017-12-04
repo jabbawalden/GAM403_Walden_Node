@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
     public float totalFireRate = 0.4f;
     public Text techShow;
     //public GameObject upgradePanel;
-    bool panelCheck = false;
+    //bool panelCheck = false;
 
     public bool completeLevel1 = false;
     public bool completeLevel2 = false;
