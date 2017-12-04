@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour {
 
     public bool completeLevel1 = false;
     public bool completeLevel2 = false;
+    public bool freeUpgrade = true;
+    
 
 
 

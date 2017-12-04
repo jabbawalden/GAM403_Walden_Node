@@ -26,26 +26,36 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool stoneHalf1 = false;
     public bool stoneHalf2 = false;
+    public bool techlost = false;
+  
 
     void Start()
     {      
         gameManager = FindObjectOfType<GameState>();
         health = GameController.control.maxHealth;
         speed = GameController.control.totalPlayerSpeed;
+        
     }
 
     // Use this for initialization
     void Update ()
     {
 
+        
 
-       
 
         PInput (); //calls Player Input Function into update (per frame)
 
         if (dead == true)
         {
-            GameController.control.techCollected -= 5;
+            if (techlost == false)
+            {
+                techlost = true;                              
+                Invoke("DeductTechpoints", 0.2f);
+                                
+            }
+           
+
             if (Input.GetKey(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);              
@@ -142,6 +152,20 @@ public class PlayerMovement : MonoBehaviour {
 		//this function now has a force added to it?
 
 	}
+
+    public void DeductTechpoints ()
+    {
+
+        if (GameController.control.techCollected >= 5)
+        {
+            GameController.control.techCollected -= 5;
+        } else if (GameController.control.techCollected <= 5)
+        {
+            GameController.control.techCollected = 0;
+        }
+
+
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {

@@ -10,20 +10,18 @@ public class GameState : MonoBehaviour {
     public float restartDelay;
     public bool weHaveWon = false;
     public Collectable collectable;
-    
+    public Collectable2 collectable2;
+     
 
     void Update()
     {
-        if (collectable.haveBeenCollected == true)
+        if (collectable.haveBeenCollected == true || collectable2.haveBeenCollected == true)
         {
             weHaveWon = true; 
 
         }
 
-        if (collectable == null)
-        {
-            return;
-        }
+      
 
         if (Input.GetKeyDown("space") && collectable.haveBeenCollected == true)
         {
