@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     {      
         gameManager = FindObjectOfType<GameState>();
         health = GameController.control.maxHealth;
-        speed = GameController.control.playerSpeed;
+        speed = GameController.control.totalPlayerSpeed;
     }
 
     // Use this for initialization
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (dead == true)
         {
+            GameController.control.techCollected -= 5;
             if (Input.GetKey(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);              

@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-
+        fireRate = GameController.control.totalFireRate;
 
     }
 	

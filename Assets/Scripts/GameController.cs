@@ -7,13 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-    public int maxHealth;
-    public int techCollected;
-    public int playerSpeed;
+    public int maxHealth = 3;
+    public int techCollected = 0;
+    public int totalPlayerSpeed = 10;
+    public float totalFireRate = 0.4f;
     public Text techShow;
-    public GameObject upgradePanel;
+    //public GameObject upgradePanel;
     bool panelCheck = false;
-    
+
+    public bool completeLevel1 = false;
+    public bool completeLevel2 = false;
 
 
 
@@ -63,6 +66,7 @@ public class GameController : MonoBehaviour {
     {
         techShow.text = "Tech Collected: " + techCollected;
 
+        /*
         if (panelCheck == false)
         {
             upgradePanel.SetActive(false);
@@ -78,22 +82,11 @@ public class GameController : MonoBehaviour {
             panelCheck = !panelCheck;
 
         }
+        */
 
 
     }
 
-    public void HealthClick()
-    {
-        maxHealth++;
-        print("lol");
-    }
-
-
-    public void SpeedClick()
-    {
-        playerSpeed += 2;
-        print("lol");
-    }
-
+ 
 
 }

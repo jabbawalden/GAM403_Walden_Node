@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PopUpMenu : MonoBehaviour
 {
-    /*
-    public GameObject upgradePanel;
+    
+    public GameObject menuPanel;
     bool panelCheck = false;
 
     // Use this for initialization
@@ -19,12 +19,13 @@ public class PopUpMenu : MonoBehaviour
     {
         if (panelCheck == false)
         {
-            upgradePanel.SetActive(false);
+            menuPanel.SetActive(false);
         }
 
         if (panelCheck == true)
         {
-            upgradePanel.SetActive(true);
+            menuPanel.SetActive(true);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -33,6 +34,6 @@ public class PopUpMenu : MonoBehaviour
 
         }
     }
-    */
+    
 
 }

@@ -20,6 +20,11 @@ public class GameState : MonoBehaviour {
 
         }
 
+        if (collectable == null)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown("space") && collectable.haveBeenCollected == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
