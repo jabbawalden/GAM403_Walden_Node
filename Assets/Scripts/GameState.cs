@@ -11,23 +11,47 @@ public class GameState : MonoBehaviour {
     public bool weHaveWon = false;
     public Collectable collectable;
     public Collectable2 collectable2;
-     
+
 
     void Update()
     {
-        if (collectable.haveBeenCollected == true || collectable2.haveBeenCollected == true)
+        if (collectable.haveBeenCollected == true)
         {
             weHaveWon = true; 
 
         }
 
-      
-
-        if (Input.GetKeyDown("space") && collectable.haveBeenCollected == true)
+        if (collectable2.haveBeenCollected2 == true)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            
+            weHaveWon = true;
+
         }
+        //if (collectable2.haveBeenCollected == true)
+        //{
+        //    weHaveWon2 = true;
+
+            //}
+
+        if (weHaveWon == true)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                print("pressingSpace");
+            }
+        }
+
+        if (collectable2.haveBeenCollected2 == true)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                print("pressingSpace");
+            }
+        }
+
+
+
 
 
     }

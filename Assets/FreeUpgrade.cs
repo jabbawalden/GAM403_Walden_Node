@@ -22,7 +22,7 @@ public class FreeUpgrade : MonoBehaviour {
             if (GameController.control.freeUpgrade == true)
             {
                 
-                GameController.control.techCollected += 10;
+                GameController.control.techCollected += 15;
                 GameController.control.freeUpgrade = false;
             }
 

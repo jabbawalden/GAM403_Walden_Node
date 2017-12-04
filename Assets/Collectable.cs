@@ -7,16 +7,22 @@ public class Collectable : MonoBehaviour {
     public GameObject collectableStone;
     public bool haveBeenCollected = false;
     public BoxCollider2D bc;
+    public GameObject goToNextLevel;
+    
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        goToNextLevel.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+		if (haveBeenCollected == true)
+        {
+            goToNextLevel.SetActive(true);
+        }
 
 	}
 

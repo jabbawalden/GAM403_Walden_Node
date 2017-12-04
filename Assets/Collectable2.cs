@@ -5,19 +5,26 @@ using UnityEngine;
 public class Collectable2 : MonoBehaviour {
 
     public GameObject collectableStone;
-    public bool haveBeenCollected = false;
+    public bool haveBeenCollected2 = false;
     public BoxCollider2D bc;
+    public GameObject comepletedLevel;
+    
 
     // Use this for initialization
     void Start()
     {
+        comepletedLevel.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+       if (haveBeenCollected2 == true)
+        {
+            comepletedLevel.SetActive(true);
 
+        }
 
     }
 
@@ -26,7 +33,7 @@ public class Collectable2 : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collectableStone);
-            haveBeenCollected = true;
+            haveBeenCollected2 = true;
             bc.enabled = false;
             GameController.control.completeLevel2 = true;
         }
