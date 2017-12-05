@@ -15,6 +15,7 @@ public class GameState : MonoBehaviour {
 
     void Update()
     {
+        //sets bool to true if either collectabl is collected
         if (collectable.haveBeenCollected == true)
         {
             weHaveWon = true; 
@@ -32,6 +33,7 @@ public class GameState : MonoBehaviour {
 
             //}
 
+       
         if (weHaveWon == true)
         {
             if (Input.GetKeyDown("space"))
@@ -49,7 +51,8 @@ public class GameState : MonoBehaviour {
                 print("pressingSpace");
             }
         }
-
+        //above code no longer being used, but was the prior way of changing levels upon
+        //space bar (go to next in index etc.)
 
 
 

@@ -26,4 +26,7 @@ public class EnemyTrigger : MonoBehaviour {
             
         }
     }
+
+    //trigger to detect when player has arrived or left
+    //other scripts call upon the bool to check whether or not to fire/attack the player
 }

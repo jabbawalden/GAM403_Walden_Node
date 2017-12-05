@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
+    //sets to static - now accessible to all other scripts
     public int maxHealth = 3;
     public int techCollected = 0;
     public int totalPlayerSpeed = 10;
@@ -18,9 +19,11 @@ public class GameController : MonoBehaviour {
     public bool completeLevel1 = false;
     public bool completeLevel2 = false;
     public bool freeUpgrade = true;
-    
 
+    //various values, bools and references
 
+    public GameObject techHolder;
+    //turn techHolder false in inspector so that canvas is not in the way when editting.
 
     void Awake()
     {
@@ -33,7 +36,8 @@ public class GameController : MonoBehaviour {
         {
             Destroy(gameObject);
             //if already exists, destroy this - singleton design pattern i.e. there can
-            //only be one of these.
+            //only be one of these. Very useful for holding persistent information about player stats
+            //and game/level state (for one off events etc.)
         }
         
 
@@ -45,7 +49,8 @@ public class GameController : MonoBehaviour {
     {
         DontDestroyOnLoad(gameObject);
         //will persist from scene to scene
-
+        techHolder.SetActive(true);
+        //turn on when game starts
        
 
     }
@@ -67,6 +72,7 @@ public class GameController : MonoBehaviour {
 	void Update ()
     {
         techShow.text = "Tech Collected: " + techCollected;
+        //sets on screen UI to show amount of tech
 
         /*
         if (panelCheck == false)

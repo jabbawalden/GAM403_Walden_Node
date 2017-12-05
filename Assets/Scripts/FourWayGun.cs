@@ -17,6 +17,8 @@ public class FourWayGun : MonoBehaviour {
     float nextFire = 0;
     public EnemyGunTrigger trigger; 
     public bool shooting = false;
+    //variables holding shot origin, the projectile prefab, fireRate, trigger 
+    //and bool for whether shooting allowed or not
 
     void Update()
     { 
@@ -31,13 +33,16 @@ public class FourWayGun : MonoBehaviour {
     void EnemyShoot()
     {
         if (Time.time > nextFire)
-        {
+        {   //if time greater than nextFire, add fireRate + instantiate projectiles 
             nextFire = Time.time + fireRate;
             GameObject pClone = Instantiate(eProj1, eSOrigin.position, eSOrigin.rotation) as GameObject;
             GameObject pClone2 = Instantiate(eProj2, eSOrigin2.position, eSOrigin2.rotation) as GameObject;
             GameObject pClone3 = Instantiate(eProj3, eSOrigin3.position, eSOrigin3.rotation) as GameObject;
             GameObject pClone4 = Instantiate(eProj4, eSOrigin4.position, eSOrigin4.rotation) as GameObject;
         }
+        //instantiates the projectiles from different origins 
+        //each projectile has it's own behaviour so make sure to place in the right references.
+
     }
 
 

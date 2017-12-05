@@ -8,6 +8,7 @@ public class tileAppear : MonoBehaviour {
     public GameObject gunDestructable;
     public GameObject groundAppear;
     public GameObject invisibleWall;
+    //variables set
 
 	// Use this for initialization
 	void Start ()
@@ -23,5 +24,6 @@ public class tileAppear : MonoBehaviour {
             groundAppear.SetActive(true);
             invisibleWall.SetActive(false);
         }
+        //remove collider and enable ground
 	}
 }

@@ -6,6 +6,8 @@ public class HealBox : MonoBehaviour {
 
     public GameObject healBox;
     public PlayerMovement playerHealth;
+    public Collider2D colliderCheck;
+    //variables for player health and item
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,10 +19,15 @@ public class HealBox : MonoBehaviour {
                 {
                     playerHealth.health += 1;
                     Destroy(healBox);
+                    Destroy(colliderCheck);
+                    //remove collider 
                 }
 
             }
         }
+
+        //if player enters trigger area and if the players health is less than maximum
+        //add 1 health and destroy healBox item
        
     }
 

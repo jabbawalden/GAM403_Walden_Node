@@ -11,6 +11,8 @@ public class EnemyGunShoot : MonoBehaviour {
     float nextFire = 0;
     public EnemyTrigger trigger;
     public bool shooting = false;
+    //variables setting firerate, position bullet instansiates from, trigger for when to fire (or not fire)
+    //bool to choose when firing is active and not active
 
     void Update()
     {
@@ -18,6 +20,7 @@ public class EnemyGunShoot : MonoBehaviour {
         {
             EnemyShoot();
         }
+        //call EnemyShoot function
         
         if (trigger.playerIsHere == true)
         {
@@ -28,7 +31,7 @@ public class EnemyGunShoot : MonoBehaviour {
         {
             shooting = false;
         }
-
+        //if trigger bool true, set to relevant value
     }
 
     void EnemyShoot()
@@ -39,6 +42,7 @@ public class EnemyGunShoot : MonoBehaviour {
             GameObject pClone = Instantiate(enemyProjectile, eSOrigin.position, eSOrigin.rotation) as GameObject;
             
         }
+        //enemy instantiates projectile at a particular rate from enemy shoot origin position
     }
 
 

@@ -14,17 +14,15 @@ public class Collectable2 : MonoBehaviour {
     void Start()
     {
         comepletedLevel.SetActive(false);
-
     }
 
     // Update is called once per frame
     void Update()
     {
        if (haveBeenCollected2 == true)
-        {
+       {
             comepletedLevel.SetActive(true);
-
-        }
+       }
 
     }
 

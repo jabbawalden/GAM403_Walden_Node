@@ -11,17 +11,19 @@ public class OMovement : MonoBehaviour {
     bool moveRight;
     bool moveLeft;
     public float speed = 4;
+    //variables to check speed, position of P1 and P2 + bools to set when to move left and right
 
     private void Start()
     {
         transform.position = P1.transform.position;      
         moveLeft = false;
+        //at start, do this.
     }
 
     void Update()
     {
         float deltaPosition = speed * Time.deltaTime;        
-
+        //to do via time instead of framerate as this varies
 
         if (transform.position == P1.transform.position)
         {
@@ -33,7 +35,7 @@ public class OMovement : MonoBehaviour {
         {
             moveLeft = true;
         }
-
+        //if at this position, set bool to true or false (only needed one bool)
          
 
         if (moveLeft)
@@ -45,6 +47,7 @@ public class OMovement : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, P2.position, deltaPosition);
        
         }
+        //if moveLeft, moveTowards opposite position, otherwise move back to the first one.
 
         /* if (transform.position == P1.transform.position) 
          { 

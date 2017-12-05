@@ -164,6 +164,8 @@ public class PlayerMovement : MonoBehaviour {
             GameController.control.techCollected = 0;
         }
 
+        //when player dies, this function is called. Lose 5 tech upon each death, 
+        //otherwise if less than 5, equal to zero so that we don't go into negatives
 
     }
 
@@ -178,6 +180,8 @@ public class PlayerMovement : MonoBehaviour {
             pShoot.alive = false;
         }
 
+        //if hits obstacle, dies.
+
         if (collision.collider.CompareTag("EProj"))
         {
             if (health == 0)
@@ -190,6 +194,7 @@ public class PlayerMovement : MonoBehaviour {
             }
             
         }
+        //if hit by eproj and health = 0, dies.
 
         if (collision.collider.CompareTag("Enemy"))
         {
@@ -200,6 +205,7 @@ public class PlayerMovement : MonoBehaviour {
             bc.enabled = false;
             health = 0;
         }
+        //if hits enemy, dies
 
         if (collision.collider.CompareTag("StoneHalf1"))
         {
@@ -209,6 +215,9 @@ public class PlayerMovement : MonoBehaviour {
         {
             stoneHalf2 = true;
         }
+
+        //above two check for stone collection in third level.
+        //if both are collected, remove the blockade set at the middle of the level
     }
 
 

@@ -9,7 +9,7 @@ public class AttackPlayer : MonoBehaviour {
     public Transform playerPosition;
     public float speed = 10;
     public Rigidbody2D rb;
-
+    
 	
 	
 	// Update is called once per frame
@@ -32,6 +32,7 @@ public class AttackPlayer : MonoBehaviour {
 
     }
 
+    //same as the other Attack script, except this object moves directly to player position. If player touches it, they die.
 
    
 }

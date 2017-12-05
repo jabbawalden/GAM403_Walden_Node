@@ -6,16 +6,16 @@ public class IncreaseFireRate : MonoBehaviour {
 
 	public void FireRateIncrease ()
     {
-        if (GameController.control.totalFireRate <= 0.1f)
+        if (GameController.control.totalFireRate <= 0.05f)
         {
-            GameController.control.totalFireRate = 0.1f;
+            GameController.control.totalFireRate = 0.05f;
 
 
         }
-        else if (GameController.control.techCollected >= 45 && GameController.control.totalFireRate >= 0.2f)
+        else if (GameController.control.techCollected >= 45 && GameController.control.totalFireRate >= 0.1f)
         {
 
-            GameController.control.totalFireRate -= 0.1f;
+            GameController.control.totalFireRate -= 0.05f;
             GameController.control.techCollected -= 45;
       
         }

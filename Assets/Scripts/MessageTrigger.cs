@@ -28,6 +28,8 @@ public class MessageTrigger : MonoBehaviour {
             line.SetActive(true);
             Debug.Log("Player here now");
         }
+        //if player enters trigger, set message animation
+
 
         //if (collision.CompareTag("Player") && wall == null)
         //{

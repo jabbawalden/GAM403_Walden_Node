@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour {
     {
         if (alive)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
+            if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
                 GameObject pClone = Instantiate(projectile, shotOrigin.position, shotOrigin.rotation) as GameObject;
