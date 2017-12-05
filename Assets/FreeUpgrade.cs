@@ -14,6 +14,7 @@ public class FreeUpgrade : MonoBehaviour {
         if (GameController.control.freeUpgrade == false)
         {
             Destroy(freeUpgradeBox);
+            Destroy(colliderCheck);
         }
     }
 
