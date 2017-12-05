@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour {
     public int health = 3;
     public GameObject youLose;
     bool dead = false;
-    public GameState gameManager;
-    public GameObject youWinUI;
+    //public GameState gameManager;
+    //public GameObject youWinUI;
 
     public GameObject[] healthHearts;
     //public GameObject hEqualsOne;
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start()
     {      
-        gameManager = FindObjectOfType<GameState>();
+        //gameManager = FindObjectOfType<GameState>();
         health = GameController.control.maxHealth;
         speed = GameController.control.totalPlayerSpeed;
         
@@ -62,12 +62,12 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        if (gameManager.weHaveWon == true)
-        {
-            speed = 0;
-            pShoot.alive = false;
-            youWinUI.SetActive(true);
-        }
+        //if (gameManager.weHaveWon == true)
+        //{
+        //    speed = 0;
+        //    pShoot.alive = false;
+        //    youWinUI.SetActive(true);
+        //}
 
         /*
         if (health == 2)
