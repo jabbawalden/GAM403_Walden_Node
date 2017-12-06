@@ -9,8 +9,19 @@ public class IncreaseSpeed : MonoBehaviour
     {
         if (GameController.control.techCollected >= 15)
         {
-            GameController.control.totalPlayerSpeed++;
-            GameController.control.techCollected -= 15;
+            if (GameController.control.totalPlayerSpeed <= 16)
+            {
+
+                GameController.control.totalPlayerSpeed++;
+                GameController.control.techCollected -= 15;
+
+            }
+            else if (GameController.control.totalPlayerSpeed >= 17)
+            {
+                GameController.control.totalPlayerSpeed = 17;
+                
+            }
+            
         }
       
     } 

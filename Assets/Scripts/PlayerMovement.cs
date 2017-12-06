@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour {
         //gameManager = FindObjectOfType<GameState>();
         health = GameController.control.maxHealth;
         speed = GameController.control.totalPlayerSpeed;
+
+        //renderercolour for hearts
+       
         
     }
 
@@ -156,13 +159,25 @@ public class PlayerMovement : MonoBehaviour {
     public void DeductTechpoints ()
     {
 
-        if (GameController.control.techCollected >= 5)
+        if (GameController.control.techCollected >= 5 || GameController.control.techCollected <= 40)
         {
             GameController.control.techCollected -= 5;
-        } else if (GameController.control.techCollected <= 5)
+        }
+        
+        else if (GameController.control.techCollected <= 5)
         {
             GameController.control.techCollected = 0;
         }
+
+        if (GameController.control.techCollected >= 41)
+        {
+            GameController.control.techCollected -= 10;
+        }
+
+        //deduct 15 tech points if above 40. Deduct only 5 if below 40
+
+    
+
 
         //when player dies, this function is called. Lose 5 tech upon each death, 
         //otherwise if less than 5, equal to zero so that we don't go into negatives
