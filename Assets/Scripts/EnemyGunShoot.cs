@@ -6,8 +6,7 @@ public class EnemyGunShoot : MonoBehaviour {
 
     public GameObject enemyProjectile;
     public Transform eSOrigin;
-    public float fireRate;
-    public float damage;
+    public float fireRate;  
     float nextFire = 0;
     public EnemyTrigger trigger;
     public bool shooting = false;

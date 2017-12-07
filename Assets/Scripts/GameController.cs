@@ -12,18 +12,25 @@ public class GameController : MonoBehaviour {
     public int techCollected = 0;
     public int totalPlayerSpeed = 10;
     public float totalFireRate = 0.4f;
+    public int pProjSpeed = 30;
     public Text techShow;
+    
+   
     //public GameObject upgradePanel;
     //bool panelCheck = false;
 
     public bool completeLevel1 = false;
     public bool completeLevel2 = false;
+    public bool completeLevel3 = false;
     public bool freeUpgrade = true;
+    public float delayTimeCheck = 0.8f;
 
     //various values, bools and references
 
     public GameObject techHolder;
     //turn techHolder false in inspector so that canvas is not in the way when editting.
+
+    public int bossFinalHealth; 
 
     void Awake()
     {

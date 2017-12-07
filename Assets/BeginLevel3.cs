@@ -15,7 +15,7 @@ public class BeginLevel3 : MonoBehaviour {
         {
             SceneManager.LoadScene("LevelThree_V1", LoadSceneMode.Single);
 
-        }
+        } 
 
       
        

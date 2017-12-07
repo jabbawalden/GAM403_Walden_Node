@@ -8,14 +8,16 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float speed;
     public GameObject projectile;
     public GameObject projectileHolder;
+    public float delayTime;
    
     
 
 	void Start ()
     {
-        
-		//Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+        delayTime = GameController.control.delayTimeCheck;
 
+        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+        speed = GameController.control.pProjSpeed;
 
 		var mousePosition = Input.mousePosition; 
     
@@ -47,7 +49,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     void DestroyObjectDelayed ()
     {
 
-        Destroy(projectileHolder, 0.8f);
+        Destroy(projectileHolder, delayTime);
     }
     /* 
      private void OnTriggerEnter(Collider other)
@@ -80,6 +82,11 @@ public class ProjectileBehaviour : MonoBehaviour {
             if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Obstacle")
             {               
                 Destroy(gameObject);
+            }
+
+            if (collision.gameObject.tag == "Boss" )
+            {
+                GameController.control.bossFinalHealth -= 1;
             }
 
         }
