@@ -58,9 +58,9 @@ public class GameController : MonoBehaviour {
         //will persist from scene to scene
         techHolder.SetActive(true);
         //turn on when game starts
-       
+       bossFinalHealth = 100;
 
-    }
+}
 
     void OnGUI()
     {

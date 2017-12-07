@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 3929f35c6f468de43a5f9216b15cf8b0
+timeCreated: 1512643035
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WhiteKnightSpriteWholeSheet_0
+    21300002: WhiteKnightSpriteWholeSheet_1
+    21300004: WhiteKnightSpriteWholeSheet_2
+    21300006: WhiteKnightSpriteWholeSheet_3
+    21300008: WhiteKnightSpriteWholeSheet_4
+    21300010: WhiteKnightSpriteWholeSheet_5
+    21300012: WhiteKnightSpriteWholeSheet_6
+    21300014: WhiteKnightSpriteWholeSheet_7
+    21300016: WhiteKnightSpriteWholeSheet_8
+    21300018: WhiteKnightSpriteWholeSheet_9
+    21300020: WhiteKnightSpriteWholeSheet_10
+    21300022: WhiteKnightSpriteWholeSheet_11
+    21300024: WhiteKnightSpriteWholeSheet_12
+    21300026: WhiteKnightSpriteWholeSheet_13
+    21300028: WhiteKnightSpriteWholeSheet_14
+    21300030: WhiteKnightSpriteWholeSheet_15
+    21300032: WhiteKnightSpriteWholeSheet_16
+    21300034: WhiteKnightSpriteWholeSheet_17
+    21300036: WhiteKnightSpriteWholeSheet_18
+    21300038: WhiteKnightSpriteWholeSheet_19
+    21300040: WhiteKnightSpriteWholeSheet_20
+    21300042: WhiteKnightSpriteWholeSheet_21
+    21300044: WhiteKnightSpriteWholeSheet_22
+    21300046: WhiteKnightSpriteWholeSheet_23
+    21300048: WhiteKnightSpriteWholeSheet_24
+    21300050: WhiteKnightSpriteWholeSheet_25
+    21300052: WhiteKnightSpriteWholeSheet_26
+    21300054: WhiteKnightSpriteWholeSheet_27
+    21300056: WhiteKnightSpriteWholeSheet_28
+    21300058: WhiteKnightSpriteWholeSheet_29
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 92
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 88
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 90
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 23
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 23
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 82
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 84
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_8
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 23
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_9
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_10
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 23
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 72
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_12
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 77
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_13
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 72
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 67
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 67
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 62
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_17
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 61
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_18
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 57
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_19
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 54
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 51
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 42
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_22
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 48
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_23
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 42
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_24
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 37
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 23
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_26
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 23
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_27
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 23
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_28
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 23
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WhiteKnightSpriteWholeSheet_29
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 23
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

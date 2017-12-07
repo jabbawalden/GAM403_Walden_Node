@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
     public bool stoneHalf1 = false;
     public bool stoneHalf2 = false;
     public bool techlost = false;
+
+    public GameObject playerSprite;
   
 
     void Start()
@@ -53,44 +55,20 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (techlost == false)
             {
-                techlost = true;                              
+                techlost = true;
                 Invoke("DeductTechpoints", 0.2f);
-                                
-            }
-           
+                Destroy(playerSprite);
 
-            if (Input.GetKey(KeyCode.Space))
+        }
+
+
+        if (Input.GetKey(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);              
             }
         }
 
-        //if (gameManager.weHaveWon == true)
-        //{
-        //    speed = 0;
-        //    pShoot.alive = false;
-        //    youWinUI.SetActive(true);
-        //}
-
-        /*
-        if (health == 2)
-        {
-            //hEqualsThree.SetActive(false);
-
-        }
-
-        if (health == 1)
-        {
-            //hEqualsTwo.SetActive(false);
-
-        }
-
-        if (health == 0)
-        {
-            //hEqualsOne.SetActive(false);
-
-        }
-        */
+      
 
 
         for(int i = 0; i < healthHearts.Length; i++)
@@ -159,24 +137,20 @@ public class PlayerMovement : MonoBehaviour {
     public void DeductTechpoints ()
     {
 
-        if (GameController.control.techCollected >= 5 || GameController.control.techCollected <= 40)
+        if (GameController.control.techCollected >= 5)
         {
             GameController.control.techCollected -= 5;
-        }
-        
+        }        
         else if (GameController.control.techCollected <= 5)
         {
             GameController.control.techCollected = 0;
         }
 
-        if (GameController.control.techCollected >= 41)
-        {
-            GameController.control.techCollected -= 10;
-        }
+     
 
         //deduct 15 tech points if above 40. Deduct only 5 if below 40
 
-    
+
 
 
         //when player dies, this function is called. Lose 5 tech upon each death, 
