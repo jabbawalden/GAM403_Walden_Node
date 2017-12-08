@@ -12,7 +12,7 @@ public class IncreaseProjSpeed : MonoBehaviour {
             GameController.control.delayTimeCheck = 0.6f;
 
         }
-        else if (GameController.control.pProjSpeed <= 45)
+        else if (GameController.control.pProjSpeed <= 45 && GameController.control.techCollected >= 50)
         {
 
             GameController.control.pProjSpeed += 5;

@@ -31,7 +31,7 @@ public class PopUpMenu : MonoBehaviour
         }
         //uses bool check to set menuPanel
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             panelCheck = !panelCheck;
 
