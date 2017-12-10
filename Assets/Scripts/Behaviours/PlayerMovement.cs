@@ -137,11 +137,11 @@ public class PlayerMovement : MonoBehaviour {
     public void DeductTechpoints ()
     {
 
-        if (GameController.control.techCollected >= 5)
+        if (GameController.control.techCollected >= 7)
         {
-            GameController.control.techCollected -= 5;
+            GameController.control.techCollected -= 7;
         }        
-        else if (GameController.control.techCollected <= 5)
+        else if (GameController.control.techCollected <= 7)
         {
             GameController.control.techCollected = 0;
         }
