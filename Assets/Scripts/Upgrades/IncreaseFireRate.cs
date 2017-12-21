@@ -12,7 +12,7 @@ public class IncreaseFireRate : MonoBehaviour {
 
 
         }
-        else if (GameController.control.techCollected >= 45 && GameController.control.totalFireRate >= 0.05f)
+        else if (GameController.control.techCollected >= 35 && GameController.control.totalFireRate >= 0.05f)
         {
 
             GameController.control.totalFireRate -= 0.05f;

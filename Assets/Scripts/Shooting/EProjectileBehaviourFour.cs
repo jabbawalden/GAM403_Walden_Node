@@ -6,9 +6,11 @@ public class EProjectileBehaviourFour : MonoBehaviour {
 
     public Rigidbody2D rb;
     public float speed;
-    public GameObject projectile;
+    public GameObject projectile, projExplosion;
     public GameObject projectileHolder;
     private PlayerMovement playerHealth;
+    public BoxCollider2D bc;
+    bool destroy;
 
     void Start()
     {
@@ -16,12 +18,31 @@ public class EProjectileBehaviourFour : MonoBehaviour {
         rb.velocity = new Vector3(projectile.transform.position.x * speed, 0, 0);
         DestroyObjectDelayed();
         playerHealth = FindObjectOfType<PlayerMovement>();
+        projExplosion.SetActive(false);
     }
 
     void DestroyObjectDelayed()
     {
 
-        Destroy(projectileHolder, 3);
+        Destroy(projectile, 3);
+    }
+
+
+    void FixedUpdate()
+    {
+        if (projectile == null)
+        {
+            rb.velocity = Vector2.zero;
+            bc.enabled = false;
+            projExplosion.SetActive(true);
+            destroy = true;
+
+            if (destroy)
+            {
+                Destroy(gameObject, 1);
+            }
+
+        }
     }
 
 
@@ -30,20 +51,32 @@ public class EProjectileBehaviourFour : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Player")
             {
-                Destroy(gameObject);
+                Destroy(projectile);
                 playerHealth.health = playerHealth.health - 1;
+                speed = 0; 
+                projExplosion.SetActive(true);
+                Destroy(gameObject, 3);
+                bc.enabled = false;
             }
 
             if (collision.gameObject.tag == "PProj")
             {
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                Destroy(projectile);
+                speed = 0;
+                projExplosion.SetActive(true);
+                Destroy(gameObject, 3);
+                bc.enabled = false;
             }
 
             if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Obstacle")
             {
 
-                Destroy(gameObject);
+                Destroy(projectile);
+                speed = 0;
+                projExplosion.SetActive(true);
+                Destroy(gameObject, 3);
+                bc.enabled = false;
             }
         }
     }

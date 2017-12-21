@@ -6,13 +6,14 @@ public class ProjectileBehaviour : MonoBehaviour {
 
     public Rigidbody2D rb;
     public float speed;
-    public GameObject projectile;
+    public GameObject projectile, projExplosion;
     public GameObject projectileHolder;
     public float delayTime;
-   
-    
+    public BoxCollider2D bc;
+    bool destroy;
 
-	void Start ()
+
+    void Start ()
     {
         delayTime = GameController.control.delayTimeCheck;
 
@@ -36,7 +37,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 		rb.velocity = direction;
         //sends velocity in direciton 
 
-        
+        projExplosion.SetActive(false);
         
 
 	}
@@ -49,7 +50,8 @@ public class ProjectileBehaviour : MonoBehaviour {
     void DestroyObjectDelayed ()
     {
 
-        Destroy(projectileHolder, delayTime);
+        Destroy(projectile, delayTime);
+        
     }
     /* 
      private void OnTriggerEnter(Collider other)
@@ -62,6 +64,23 @@ public class ProjectileBehaviour : MonoBehaviour {
 
     }
     */
+    void FixedUpdate()
+    {
+      
+        if (projectile == null)
+        {
+            rb.velocity = Vector2.zero;
+            bc.enabled = false;
+            projExplosion.SetActive(true);
+            destroy = true;
+
+            if (destroy)
+            {
+                Destroy(gameObject, 1);
+            }
+
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -70,23 +89,46 @@ public class ProjectileBehaviour : MonoBehaviour {
             {
                 GameController.control.techCollected += 1;
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                Destroy(projectile);
+                projExplosion.SetActive(true);
+                speed = 0;
+                bc.enabled = false;
+
+            }
+
+            if (collision.gameObject.tag == "MissileEnemy")
+            {
+                GameController.control.techCollected += 1;              
+                Destroy(projectile);
+                projExplosion.SetActive(true);
+                speed = 0;
+                bc.enabled = false;
+
             }
 
             if (collision.gameObject.tag == "EProj")
             {
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                Destroy(projectile);
+                projExplosion.SetActive(true);
+                speed = 0;
+                bc.enabled = false;
             }
 
             if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Obstacle")
             {               
-                Destroy(gameObject);
+                Destroy(projectile);
+                speed = 0;
+                bc.enabled = false;
+                projExplosion.SetActive(true);
             }
 
             if (collision.gameObject.tag == "Boss" )
             {
                 GameController.control.bossFinalHealth -= 1;
+                speed = 0;
+                bc.enabled = false;
+                projExplosion.SetActive(true);
             }
 
         }

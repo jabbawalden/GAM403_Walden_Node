@@ -6,7 +6,12 @@ public class FreeUpgrade : MonoBehaviour {
 
     //variable
     public GameObject freeUpgradeBox;
-    public BoxCollider2D colliderCheck;
+    public GameObject techTextFree;
+
+    private void Start()
+    {
+        techTextFree.SetActive(false);
+    }
 
     void Update()
     {
@@ -14,7 +19,7 @@ public class FreeUpgrade : MonoBehaviour {
         if (GameController.control.freeUpgrade == false)
         {
             Destroy(freeUpgradeBox);
-            Destroy(colliderCheck);
+  
         }
     }
 
@@ -30,7 +35,8 @@ public class FreeUpgrade : MonoBehaviour {
                  
                 GameController.control.techCollected += 15;
                 GameController.control.freeUpgrade = false;
-                Destroy(colliderCheck);
+                techTextFree.SetActive(true);
+        
             }
 
         }

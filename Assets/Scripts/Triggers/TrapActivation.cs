@@ -9,8 +9,9 @@ public class TrapActivation : MonoBehaviour {
     public GameObject[] enemyArray;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        trap.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -21,10 +22,16 @@ public class TrapActivation : MonoBehaviour {
             trap.SetActive(true);
         }
 
-        if (enemyArray == null)
-        {
-            trap.SetActive(false);
-        }
+       
+        
+       if (enemyArray[0] == null && enemyArray[1] == null && enemyArray[2] == null)
+       {
+                trap.SetActive(false);
+                return;
+       }
+        
+    
+        
 
     }
 }

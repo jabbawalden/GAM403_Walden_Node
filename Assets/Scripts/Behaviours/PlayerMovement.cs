@@ -46,9 +46,6 @@ public class PlayerMovement : MonoBehaviour {
     void Update ()
     {
 
-        
-
-
         PInput (); //calls Player Input Function into update (per frame)
 
         if (dead == true)
@@ -67,10 +64,7 @@ public class PlayerMovement : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);              
             }
         }
-
-      
-
-
+    
         for(int i = 0; i < healthHearts.Length; i++)
         {
 

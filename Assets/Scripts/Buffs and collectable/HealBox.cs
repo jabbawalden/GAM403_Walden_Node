@@ -6,8 +6,14 @@ public class HealBox : MonoBehaviour {
 
     public GameObject healBox;
     public PlayerMovement playerHealth;
-    public Collider2D colliderCheck;
+    public GameObject healText;
+
     //variables for player health and item
+
+    private void Start()
+    {
+        healText.SetActive(false);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,8 +25,8 @@ public class HealBox : MonoBehaviour {
                 {
                     playerHealth.health += 1;
                     Destroy(healBox);
-                    Destroy(colliderCheck);
-                    //remove collider 
+                    healText.SetActive(true);
+                  
                 }
 
             }

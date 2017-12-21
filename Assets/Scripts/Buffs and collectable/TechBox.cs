@@ -5,8 +5,13 @@ using UnityEngine;
 public class TechBox : MonoBehaviour {
 
     public GameObject techBox;
-    public Collider2D colliderCheck;
+    public GameObject techText;
     public int techAmount; //so that we can set tech amount per box in inspector
+
+    private void Start()
+    {
+        techText.SetActive(false);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +19,8 @@ public class TechBox : MonoBehaviour {
         {                     
             GameController.control.techCollected += techAmount;
             Destroy(techBox);
-            Destroy(colliderCheck);
+            techText.SetActive(true);
+            
         }
         //if player makes contact, destroy item and add the set techAmount.
     }
