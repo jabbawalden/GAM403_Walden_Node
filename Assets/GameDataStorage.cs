@@ -9,8 +9,14 @@ public class GameDataStorage : MonoBehaviour
 {
     public static GameDataStorage gameData;
 
+
     public bool game1, game2, game3;
-    public bool delete1, delete2, delete3;
+    
+    //public bool delete1, delete2, delete3;
+
+    public bool g1exists, g2exists, g3exists;
+    public bool g1Start, g2Start, g3Start;
+
 
     void Awake()
     {
@@ -25,10 +31,71 @@ public class GameDataStorage : MonoBehaviour
          
         }
 
+        /*
         delete1 = false;
         delete2 = false;
         delete3 = false;
+        */
+        g1Start = false;
+        g2Start = false;
+        g3Start = false;
 
+        //booleans to check when a game has begun. Initally set to flase until a level begins.
+    }  
+
+    void Update()
+    {
+
+        if (File.Exists(Application.persistentDataPath + "/PlayerGameOne.dat"))
+        {
+           
+            g1exists = true;
+         
+        } else
+        {
+            g1exists = false;
+         
+        }
+
+        if (File.Exists(Application.persistentDataPath + "/PlayerGameTwo.dat"))
+        {
+
+            g2exists = true;
+           
+        }
+        else
+        {
+            g2exists = false;
+            
+        }
+
+        if (File.Exists(Application.persistentDataPath + "/PlayerGameThree.dat"))
+        {
+
+            g3exists = true;
+         
+        }
+        else
+        {
+            g3exists = false;
+           
+        }
+        /*
+        if (g1exists == false)
+        {
+            delete1 = true;
+        }
+
+        if (g2exists == false)
+        {
+            delete2 = true;
+        }
+
+        if (g3exists == false)
+        {
+            delete3 = true;
+        }
+        */
     }
 
     public void SaveOne ()
@@ -52,11 +119,16 @@ public class GameDataStorage : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-
-        game1 = false;
-        delete1 = false;
         
- 
+        game1 = false;
+        g1Start = false; 
+        //checks for when game has no longer started. if file is deleted during 1 play, we must know when to
+        //reset stats to default
+        /*
+        delete1 = false;
+        g1exists = true;
+        */
+
     }
 
     public void SaveTwo()
@@ -79,8 +151,13 @@ public class GameDataStorage : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
 
+       
         game2 = false;
-        delete2 = false;
+        g2Start = false;
+        /*
+         delete2 = false;
+         g2exists = true;
+         */
     }
 
     public void SaveThree()
@@ -88,7 +165,11 @@ public class GameDataStorage : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/PlayerGameThree.dat");
         PlayerData data = new PlayerData();
-
+  
+        /*
+        delete3 = false;
+        g3exists = true;
+        */
         data.maxHealth = GameController.control.maxHealth;
         data.techCollected = GameController.control.techCollected;
         data.totalPlayerSpeed = GameController.control.totalPlayerSpeed;
@@ -99,12 +180,23 @@ public class GameDataStorage : MonoBehaviour
         data.completeLevel2 = GameController.control.completeLevel2;
         data.completeLevel3 = GameController.control.completeLevel3;
         data.freeUpgrade = GameController.control.freeUpgrade;
+        /*
+        data.g3exists = g3exists;
+        */
+
 
         bf.Serialize(file, data);
         file.Close();
 
         game3 = false;
-        delete3 = false;
+        g3Start = false;
+
+
+
+        //data.game3 = game3;
+        // data.delete3 = delete3;
+
+
     }
 
     public void LoadOne()
@@ -114,7 +206,7 @@ public class GameDataStorage : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();;
             FileStream file = File.Open(Application.persistentDataPath + "/PlayerGameOne.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
-            file.Close();
+            
 
             GameController.control.maxHealth = data.maxHealth;
             GameController.control.techCollected = data.techCollected;
@@ -127,6 +219,7 @@ public class GameDataStorage : MonoBehaviour
             GameController.control.completeLevel3 = data.completeLevel3;
             GameController.control.freeUpgrade = data.freeUpgrade;
             print("game1 loaded");
+            file.Close();
         }
       
     }
@@ -138,7 +231,7 @@ public class GameDataStorage : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter(); ;
             FileStream file = File.Open(Application.persistentDataPath + "/PlayerGameTwo.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
-            file.Close();
+            
 
             GameController.control.maxHealth = data.maxHealth;
             GameController.control.techCollected = data.techCollected;
@@ -151,6 +244,7 @@ public class GameDataStorage : MonoBehaviour
             GameController.control.completeLevel3 = data.completeLevel3;
             GameController.control.freeUpgrade = data.freeUpgrade;
             print("game2 loaded");
+            file.Close();
         }
     }
 
@@ -161,8 +255,9 @@ public class GameDataStorage : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter(); ;
             FileStream file = File.Open(Application.persistentDataPath + "/PlayerGameThree.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
-            file.Close();
+            
 
+           // g3exists = data.g3exists;
             GameController.control.maxHealth = data.maxHealth;
             GameController.control.techCollected = data.techCollected;
             GameController.control.totalPlayerSpeed = data.totalPlayerSpeed;
@@ -174,6 +269,12 @@ public class GameDataStorage : MonoBehaviour
             GameController.control.completeLevel3 = data.completeLevel3;
             GameController.control.freeUpgrade = data.freeUpgrade;
             print("game3 loaded");
+
+
+            //game3 = data.game3;
+            //delete3 = data.delete3;
+            file.Close();
+
         }
     }
 
@@ -182,8 +283,11 @@ public class GameDataStorage : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/PlayerGameOne.dat"))
         {
             File.Delete(Application.persistentDataPath + "/PlayerGameOne.dat");
-            delete1 = true;
-        }
+            //delete1 = true;
+            //g1exists = false;
+        } 
+
+        
     }
 
    
@@ -192,7 +296,8 @@ public class GameDataStorage : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/PlayerGameTwo.dat"))
         {
             File.Delete(Application.persistentDataPath + "/PlayerGameTwo.dat");
-            delete2 = true;
+           // delete2 = true;
+            //g2exists = false;
         }
     }
 
@@ -201,7 +306,8 @@ public class GameDataStorage : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/PlayerGameThree.dat"))
         {
             File.Delete(Application.persistentDataPath + "/PlayerGameThree.dat");
-            delete3 = true;
+           //delete3 = true;
+           //g3exists = false;
         }
     }
   
@@ -220,6 +326,10 @@ public class PlayerData
     public bool completeLevel2;
     public bool completeLevel3;
     public bool freeUpgrade;
+
+    public bool game1, game2, game3;
+    public bool delete1, delete2, delete3;
+    public bool g1exists, g2exists, g3exists;
 }
 
 
