@@ -59,47 +59,60 @@ public class GameController : MonoBehaviour {
         techHolder.SetActive(true);
         //turn on when game starts
        bossFinalHealth = 100;
+  
 
-}
-
-    void OnGUI()
-    {
-        /*
-        if (//healthbutton)
-        {
-            maxHealth += 1;
-        }
-
-       // GUI.Label(new Rect(10, 70, 100, 30), "techParts: " + techParts);
-       */
     }
 
-    
-	
-	void Update ()
+    void Update()
+
+    {
+        if (GameDataStorage.gameData.game1 || GameDataStorage.gameData.game2 || GameDataStorage.gameData.game3)
+        {
+            techHolder.SetActive(true);
+        }
+        else 
+        {
+            techHolder.SetActive(false);
+        }
+ 
+    }
+
+
+    void FixedUpdate ()
     {
         techShow.text = "Tech Collected: " + techCollected;
-        //sets on screen UI to show amount of tech
 
-        /*
-        if (panelCheck == false)
+        if (GameDataStorage.gameData.game1 == true && GameDataStorage.gameData.delete1 == true)
         {
-            upgradePanel.SetActive(false);
+            maxHealth = 3; 
+            techCollected = 0;
+            totalPlayerSpeed = 10;
+            totalFireRate = 0.4f;
+            pProjSpeed = 30;
+            freeUpgrade = true;
+    }
+
+        if (GameDataStorage.gameData.game2 == true && GameDataStorage.gameData.delete2 == true)
+        {
+            maxHealth = 3;
+            techCollected = 0;
+            totalPlayerSpeed = 10;
+            totalFireRate = 0.4f;
+            pProjSpeed = 30;
+            freeUpgrade = true;
         }
 
-        if (panelCheck == true)
+        if (GameDataStorage.gameData.game3 == true && GameDataStorage.gameData.delete3 == true)
         {
-            upgradePanel.SetActive(true);
+            maxHealth = 3;
+            techCollected = 0;
+            totalPlayerSpeed = 10;
+            totalFireRate = 0.4f;
+            pProjSpeed = 30;
+            freeUpgrade = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            panelCheck = !panelCheck;
-
-        }
-        */
-
-
+        
     }
 
  
