@@ -22,11 +22,13 @@ public class PopUpMenu : MonoBehaviour
         if (panelCheck == false)
         {
             menuPanel.SetActive(false);
+            Time.timeScale = 1f;
         }
 
         if (panelCheck == true)
         {
             menuPanel.SetActive(true);
+            Time.timeScale = 0.0f;
 
         }
         //uses bool check to set menuPanel
