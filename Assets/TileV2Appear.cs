@@ -12,7 +12,8 @@ public class TileV2Appear : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        groundAppear.SetActive(false);
+        invisibleWall.SetActive(true);
     }
 
     // Update is called once per frame

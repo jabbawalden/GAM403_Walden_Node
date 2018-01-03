@@ -140,8 +140,21 @@ public class PlayerMovement : MonoBehaviour {
             GameController.control.techCollected = 0;
         }
 
-     
 
+        if (GameController.control.techCollected >= 40)
+        {
+            GameController.control.techCollected -= 5;
+        }
+       
+        if (GameController.control.techCollected >= 80)
+        {
+            GameController.control.techCollected -= 10;
+        }
+        
+        if (GameController.control.techCollected >= 140)
+        {
+            GameController.control.techCollected -= 15;
+        }
         //deduct 15 tech points if above 40. Deduct only 5 if below 40
 
 
