@@ -8,12 +8,13 @@ public class Collectable : MonoBehaviour {
     public bool haveBeenCollected = false;
     public BoxCollider2D bc;
     public GameObject goToNextLevel;
-     
+    public bool nextLevelActivated; 
 
 	// Use this for initialization
 	void Start ()
     { 
         goToNextLevel.SetActive(false);
+        nextLevelActivated = false;
         //sets to false
     }
 	
@@ -24,6 +25,7 @@ public class Collectable : MonoBehaviour {
   //      {
   //          goToNextLevel.SetActive(true);
   //      }
+  
 
 	}
 
@@ -36,7 +38,7 @@ public class Collectable : MonoBehaviour {
            //bc.enabled = false; 
            //GameController.control.completeLevel1 = true;
            goToNextLevel.SetActive(true);
-
+           nextLevelActivated = true; 
 
        }
        //checks bool to be true and sets panel active

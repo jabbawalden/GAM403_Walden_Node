@@ -11,6 +11,7 @@ public class ContinueExploringLevel : MonoBehaviour {
     {
         completedLevel.haveBeenCollected = false;
         completedLevel.goToNextLevel.SetActive(false);
+        completedLevel.nextLevelActivated = false;
 
     }
 

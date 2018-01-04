@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour {
     public bool techlost = false;
 
     public GameObject playerSprite;
-  
+    public Collectable collectable;
+    
 
     void Start()
     {      
@@ -50,11 +51,13 @@ public class PlayerMovement : MonoBehaviour {
 
         if (dead == true)
         {
+            bc.enabled = false;
             if (techlost == false)
             {
                 techlost = true;
                 Invoke("DeductTechpoints", 0.2f);
                 Destroy(playerSprite);
+                
 
         }
 
@@ -90,6 +93,22 @@ public class PlayerMovement : MonoBehaviour {
          * 
          * 
          */
+
+        if (collectable.nextLevelActivated)
+        {
+            speed = 0;
+            pShoot.alive = false;
+        }
+        else
+        {
+            pShoot.alive = true;
+            speed = GameController.control.totalPlayerSpeed;
+        }
+
+
+
+        
+        
     }
 
     //detects player input
@@ -174,6 +193,7 @@ public class PlayerMovement : MonoBehaviour {
             dead = true;
             youLose.SetActive(true);
             pShoot.alive = false;
+            
         }
 
         //if hits obstacle, dies.
