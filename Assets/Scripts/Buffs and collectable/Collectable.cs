@@ -38,9 +38,11 @@ public class Collectable : MonoBehaviour {
            //bc.enabled = false; 
            //GameController.control.completeLevel1 = true;
            goToNextLevel.SetActive(true);
-           nextLevelActivated = true; 
+           nextLevelActivated = true;
+           
 
        }
+        
        //checks bool to be true and sets panel active
     }
 

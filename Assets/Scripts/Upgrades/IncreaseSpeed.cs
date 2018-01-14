@@ -15,43 +15,43 @@ public class IncreaseSpeed : MonoBehaviour
                 GameController.control.techCollected -= 15;
         }
         else 
-        if (GameController.control.techCollected >= 20 && GameController.control.totalPlayerSpeed == 11)
-        {
-                GameController.control.totalPlayerSpeed++;
-                GameController.control.techCollected -= 20;
-        }
-        else
-        if (GameController.control.techCollected >= 25 && GameController.control.totalPlayerSpeed == 12)
+        if (GameController.control.techCollected >= 25 && GameController.control.totalPlayerSpeed == 11)
         {
                 GameController.control.totalPlayerSpeed++;
                 GameController.control.techCollected -= 25;
         }
         else
-        if (GameController.control.techCollected >= 30 && GameController.control.totalPlayerSpeed == 13)
-        {
-                GameController.control.totalPlayerSpeed++;
-                GameController.control.techCollected -= 30;
-        }
-        else
-        if (GameController.control.techCollected >= 35 && GameController.control.totalPlayerSpeed == 14)
+        if (GameController.control.techCollected >= 35 && GameController.control.totalPlayerSpeed == 12)
         {
                 GameController.control.totalPlayerSpeed++;
                 GameController.control.techCollected -= 35;
         }
         else
-        if (GameController.control.techCollected >= 40 && GameController.control.totalPlayerSpeed == 15)
+        if (GameController.control.techCollected >= 45 && GameController.control.totalPlayerSpeed == 13)
         {
                 GameController.control.totalPlayerSpeed++;
-                GameController.control.techCollected -= 40;
+                GameController.control.techCollected -= 45;
         }
         else
-        if (GameController.control.techCollected >= 50 && GameController.control.totalPlayerSpeed == 16)
+        if (GameController.control.techCollected >= 65 && GameController.control.totalPlayerSpeed == 14)
         {
                 GameController.control.totalPlayerSpeed++;
-                GameController.control.techCollected -= 50;
+                GameController.control.techCollected -= 65;
         }
         else
-        if (GameController.control.techCollected >= 50 && GameController.control.totalPlayerSpeed == 17)
+        if (GameController.control.techCollected >= 80 && GameController.control.totalPlayerSpeed == 15)
+        {
+                GameController.control.totalPlayerSpeed++;
+                GameController.control.techCollected -= 80;
+        }
+        else
+        if (GameController.control.techCollected >= 100 && GameController.control.totalPlayerSpeed == 16)
+        {
+                GameController.control.totalPlayerSpeed++;
+                GameController.control.techCollected -= 100;
+        }
+        else
+        if (GameController.control.techCollected >= 100 && GameController.control.totalPlayerSpeed == 17)
         {
                 GameController.control.totalPlayerSpeed = 17;
 
@@ -63,37 +63,37 @@ public class IncreaseSpeed : MonoBehaviour
     {
         if (GameController.control.totalPlayerSpeed == 11)
         {
-            speedCost.text = "Cost: 20 Tech";
+            speedCost.text = "Cost: 25 Tech";
             speedLVL.text = "LVL 2";
         }
 
         if (GameController.control.totalPlayerSpeed == 12)
         {
-            speedCost.text = "Cost: 25 Tech";
+            speedCost.text = "Cost: 35 Tech";
             speedLVL.text = "LVL 3";
         }
 
         if (GameController.control.totalPlayerSpeed == 13)
         {
-            speedCost.text = "Cost: 30 Tech";
+            speedCost.text = "Cost: 45 Tech";
             speedLVL.text = "LVL 4";
         }
 
         if (GameController.control.totalPlayerSpeed == 14)
         {
-            speedCost.text = "Cost: 35 Tech";
+            speedCost.text = "Cost: 65 Tech";
             speedLVL.text = "LVL 5";
         }
 
         if (GameController.control.totalPlayerSpeed == 15)
         {
-            speedCost.text = "Cost: 40 Tech";
+            speedCost.text = "Cost: 80 Tech";
             speedLVL.text = "LVL 6";
         }
 
         if (GameController.control.totalPlayerSpeed == 16)
         {
-            speedCost.text = "Cost: 50 Tech";
+            speedCost.text = "Cost: 100 Tech";
             speedLVL.text = "LVL 7";
         }
 

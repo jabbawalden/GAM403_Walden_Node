@@ -5,10 +5,15 @@ using UnityEngine;
 public class EMShooterController : MonoBehaviour {
 
     public int emHealth = 4;
+   bool kill;
 
-    private void Update()
+    private void Start()
     {
-        if (emHealth == 0)
+        kill = false;
+    }
+    void FixedUpdate()
+    {
+        if (kill)
         {
             Destroy(gameObject);
         }
@@ -18,10 +23,17 @@ public class EMShooterController : MonoBehaviour {
     {
 
         if (collision.gameObject.tag == "PProj")
-
         {
-            emHealth -= 1;
-        }
+            if (!kill)
+            {
+                emHealth -= 1;
+            }
+
+            if (emHealth <= 0)
+            {
+                kill = true;
+            }
+        } 
 
    
         

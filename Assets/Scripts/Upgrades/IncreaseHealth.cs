@@ -13,10 +13,10 @@ public class IncreaseHealth : MonoBehaviour {
         {
             GameController.control.maxHealth = 8;
         }
-        else if (GameController.control.techCollected >= 20 && GameController.control.maxHealth == 3)
+        else if (GameController.control.techCollected >= 150 && GameController.control.maxHealth == 3)
         {
             GameController.control.maxHealth++;
-            GameController.control.techCollected -= 20;
+            GameController.control.techCollected -= 15;
 
         }
         else if (GameController.control.techCollected >= 25 && GameController.control.maxHealth == 4)
@@ -31,16 +31,16 @@ public class IncreaseHealth : MonoBehaviour {
             GameController.control.techCollected -= 35;
 
         }
-        else if (GameController.control.techCollected >= 50 && GameController.control.maxHealth == 6)
+        else if (GameController.control.techCollected >= 60 && GameController.control.maxHealth == 6)
         {
             GameController.control.maxHealth++;
-            GameController.control.techCollected -= 50;
+            GameController.control.techCollected -= 60;
 
         }
-        else if (GameController.control.techCollected >= 75 && GameController.control.maxHealth == 7)
+        else if (GameController.control.techCollected >= 95 && GameController.control.maxHealth == 7)
         {
             GameController.control.maxHealth++;
-            GameController.control.techCollected -= 75;
+            GameController.control.techCollected -= 95;
 
         }
 
@@ -62,13 +62,13 @@ public class IncreaseHealth : MonoBehaviour {
 
         if (GameController.control.maxHealth == 6)
         {
-            healthCost.text = "Cost: 50 Tech";
+            healthCost.text = "Cost: 60 Tech";
             healthLevel.text = "LVL 6";
         }
 
         if (GameController.control.maxHealth == 7)
         {
-            healthCost.text = "Cost: 75 Tech";
+            healthCost.text = "Cost: 95 Tech";
             healthLevel.text = "LVL 7";
         }
 

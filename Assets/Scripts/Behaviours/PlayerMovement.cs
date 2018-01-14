@@ -8,21 +8,16 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D rb; //rigidbody variable
     public BoxCollider2D bc; //box collider variable
     public float speed; //speed of movement float
-	private Vector2 axisForce; //will hold axis horizontal and vertical
+    private Vector2 axisForce; //will hold axis horizontal and vertical
                                //Vectors hold directional values.
     public PlayerShoot pShoot;
     public int health = 3;
     public GameObject youLose;
     bool dead = false;
-    //public GameState gameManager;
-    //public GameObject youWinUI;
 
     public GameObject[] healthHearts;
-    //public GameObject hEqualsOne;
-    //public GameObject hEqualsTwo;
-    //public GameObject hEqualsThree;
     public Transform playerPosition;
-    //int healthIncrease;
+ 
 
     public bool stoneHalf1 = false;
     public bool stoneHalf2 = false;
@@ -30,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject playerSprite;
     public Collectable collectable;
-    
+
 
     void Start()
     {      
@@ -49,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 
         PInput (); //calls Player Input Function into update (per frame)
 
+    
         if (dead == true)
         {
             bc.enabled = false;
@@ -57,18 +53,28 @@ public class PlayerMovement : MonoBehaviour {
                 techlost = true;
                 Invoke("DeductTechpoints", 0.2f);
                 Destroy(playerSprite);
-                
+            
+            }
 
-        }
 
-
-        if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);              
             }
         }
-    
-        for(int i = 0; i < healthHearts.Length; i++)
+        else if (collectable.haveBeenCollected)
+        {
+            speed = 0;
+            pShoot.alive = false;
+
+        }
+        else if (collectable.haveBeenCollected == false)
+        {
+            speed = GameController.control.totalPlayerSpeed;
+            pShoot.alive = true;
+        }
+
+        for (int i = 0; i < healthHearts.Length; i++)
         {
 
             //if (health == i)
@@ -94,16 +100,17 @@ public class PlayerMovement : MonoBehaviour {
          * 
          */
 
-        if (collectable.nextLevelActivated)
-        {
-            speed = 0;
-            pShoot.alive = false;
-        }
-        else
-        {
-            pShoot.alive = true;
-            speed = GameController.control.totalPlayerSpeed;
-        }
+
+        //if (collectable.nextLevelActivated)
+        //{
+        //    speed = 0;
+        //    pShoot.alive = false;
+        //}
+        //else
+        //{
+        //    pShoot.alive = true;
+        //    speed = GameController.control.totalPlayerSpeed;
+        //}
 
 
 

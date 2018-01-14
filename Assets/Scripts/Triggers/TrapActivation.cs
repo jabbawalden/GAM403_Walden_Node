@@ -6,7 +6,7 @@ public class TrapActivation : MonoBehaviour {
 
     public GameObject trap;
     public EnemyTrigger trigger;
-    public GameObject[] enemyArray;
+    
 
 	// Use this for initialization
 	void Start ()
@@ -22,13 +22,6 @@ public class TrapActivation : MonoBehaviour {
             trap.SetActive(true);
         }
 
-       
-        
-       if (enemyArray[0] == null && enemyArray[1] == null && enemyArray[2] == null)
-       {
-                trap.SetActive(false);
-                return;
-       }
         
     
         

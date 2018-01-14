@@ -25,29 +25,29 @@ public class IncreaseProjSpeed : MonoBehaviour {
     
 
         }
-        else if (GameController.control.pProjSpeed == 35 && GameController.control.techCollected >= 50)
+        else if (GameController.control.pProjSpeed == 35 && GameController.control.techCollected >= 55)
         {
 
             GameController.control.pProjSpeed = 40;
-            GameController.control.techCollected -= 50;
+            GameController.control.techCollected -= 55;
             GameController.control.delayTimeCheck = 0.7f;
          
 
         }
-        else if (GameController.control.pProjSpeed == 40 && GameController.control.techCollected >= 65)
+        else if (GameController.control.pProjSpeed == 40 && GameController.control.techCollected >= 85)
         {
 
             GameController.control.pProjSpeed = 45;
-            GameController.control.techCollected -= 65;
+            GameController.control.techCollected -= 85;
             GameController.control.delayTimeCheck = 0.65f;
    
 
         }
-        else if (GameController.control.pProjSpeed == 45 && GameController.control.techCollected >= 80)
+        else if (GameController.control.pProjSpeed == 45 && GameController.control.techCollected >= 100)
         {
 
             GameController.control.pProjSpeed = 50;
-            GameController.control.techCollected -= 80;
+            GameController.control.techCollected -= 100;
             GameController.control.delayTimeCheck = 0.6f;
          
         }
@@ -62,19 +62,19 @@ public class IncreaseProjSpeed : MonoBehaviour {
 
         if (GameController.control.pProjSpeed == 35)
         {
-            bulletSpeedCost.text = "Cost: 50 Tech";
+            bulletSpeedCost.text = "Cost: 55 Tech";
             bulletSpeedLVL.text = "LVL 2";
         }
 
         if (GameController.control.pProjSpeed == 40)
         {
-            bulletSpeedCost.text = "Cost: 65 Tech";
+            bulletSpeedCost.text = "Cost: 85 Tech";
             bulletSpeedLVL.text = "LVL 3";
         }
 
         if (GameController.control.pProjSpeed == 45)
         {
-            bulletSpeedCost.text = "Cost: 80 Tech";
+            bulletSpeedCost.text = "Cost: 100 Tech";
             bulletSpeedLVL.text = "LVL 4";
         }
 

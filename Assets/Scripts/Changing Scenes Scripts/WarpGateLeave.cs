@@ -20,20 +20,21 @@ public class WarpGateLeave : MonoBehaviour {
         {
             leaveMenu.SetActive(true);
             weAreLeaving = true;
+            player.speed = 0;
         }
     }
 
     public void Update()
     {
-        if (weAreLeaving)
-        {
-            player.speed = 0;
-            player.pShoot.alive = false;
-        }
-        else
-        {
-            player.speed = GameController.control.totalPlayerSpeed;
-            player.pShoot.alive = true;
-        }
+        //if (weAreLeaving)
+        //{
+        //    player.speed = 0;
+        //    player.pShoot.alive = false;
+        //}
+        //else
+        //{
+        //    player.speed = GameController.control.totalPlayerSpeed;
+        //    player.pShoot.alive = true;
+        //}
     }
 }

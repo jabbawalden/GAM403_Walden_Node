@@ -29,7 +29,7 @@ public class Level3AttackPlayer : MonoBehaviour {
         var targetPosition = (transform.position - playerPosition.position).normalized * distance + playerPosition.position;
         //finding the targetpositions direction at any one time.
 
-        if (targetTrigger.playerIsHere == true)
+        if (targetTrigger.playerIsHere == true) 
         {
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, deltaPosition);
