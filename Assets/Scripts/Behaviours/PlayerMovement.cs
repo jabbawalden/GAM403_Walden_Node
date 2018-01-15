@@ -38,9 +38,11 @@ public class PlayerMovement : MonoBehaviour {
     private void InitializeScoreDeductionMap()
     {
         scoreToDeductMap.Add(minimumScoreThreshold, 5);
-        scoreToDeductMap.Add(40, 10);
-        scoreToDeductMap.Add(80, 10);
+        scoreToDeductMap.Add(40, 5);
+        scoreToDeductMap.Add(80, 5);
         scoreToDeductMap.Add(140, 10);
+        scoreToDeductMap.Add(180, 10);
+        scoreToDeductMap.Add(240, 10);
     }
 
     void Start()
