@@ -26,6 +26,22 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject playerSprite;
     public Collectable collectable;
 
+    private const int minimumScoreThreshold = 5;
+
+    private Dictionary<int, int> scoreToDeductMap = new Dictionary<int, int>();
+
+    private void Awake()
+    {
+        InitializeScoreDeductionMap();
+    }
+
+    private void InitializeScoreDeductionMap()
+    {
+        scoreToDeductMap.Add(minimumScoreThreshold, 5);
+        scoreToDeductMap.Add(40, 10);
+        scoreToDeductMap.Add(80, 10);
+        scoreToDeductMap.Add(140, 10);
+    }
 
     void Start()
     {      
@@ -156,39 +172,44 @@ public class PlayerMovement : MonoBehaviour {
 
     public void DeductTechpoints ()
     {
+        //For modification
+        int cachedScore = GameController.control.techCollected;
 
-        if (GameController.control.techCollected >= 7)
+        //for each int k in key list, deduct according to key value
+        foreach (int k in scoreToDeductMap.Keys)
         {
-            GameController.control.techCollected -= 7;
-        }        
-        else if (GameController.control.techCollected <= 7)
-        {
-            GameController.control.techCollected = 0;
+            if(GameController.control.techCollected >= k)
+            {
+                cachedScore -= scoreToDeductMap[k];
+            }
         }
-
-
-        if (GameController.control.techCollected >= 40)
-        {
-            GameController.control.techCollected -= 5;
-        }
-       
-        if (GameController.control.techCollected >= 80)
-        {
-            GameController.control.techCollected -= 10;
-        }
-        
-        if (GameController.control.techCollected >= 140)
-        {
-            GameController.control.techCollected -= 15;
-        }
-        //deduct 15 tech points if above 40. Deduct only 5 if below 40
-
-
-
-
         //when player dies, this function is called. Lose 5 tech upon each death, 
         //otherwise if less than 5, equal to zero so that we don't go into negatives
 
+        //check minimumScoreThreshold
+        if (cachedScore <= minimumScoreThreshold)
+        {
+            cachedScore = 0;
+        }
+        //runs parallel to update function
+        StartCoroutine(DeductScoreIncrementally(cachedScore));
+    }
+
+
+    private IEnumerator DeductScoreIncrementally(int cachedScore)
+    {
+        while (GameController.control.techCollected > cachedScore)
+        {
+            //
+            if (Time.frameCount % 3 == 0)
+            {
+                GameController.control.techCollected--;
+            }
+            //WE NEED THIS
+            //checks to move to next frame, regardless of above if statement
+            //do not place in if statement - will never move to next frame if not equal to 3's
+            yield return null;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

@@ -13,7 +13,7 @@ public class IncreaseHealth : MonoBehaviour {
         {
             GameController.control.maxHealth = 8;
         }
-        else if (GameController.control.techCollected >= 150 && GameController.control.maxHealth == 3)
+        else if (GameController.control.techCollected >= 15 && GameController.control.maxHealth == 3)
         {
             GameController.control.maxHealth++;
             GameController.control.techCollected -= 15;
