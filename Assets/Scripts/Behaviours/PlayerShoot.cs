@@ -30,6 +30,7 @@ public class PlayerShoot : MonoBehaviour {
             {
                 nextFire = Time.time + fireRate;
                 GameObject pClone = Instantiate(projectile, shotOrigin.position, shotOrigin.rotation) as GameObject;
+
                 //GameObject type name Clone - gives us a reference to the new object made
                 //allows us to define it's behaviour now that we have access to it
                 //as GameObject - Instantiate projectile as a GameObject 

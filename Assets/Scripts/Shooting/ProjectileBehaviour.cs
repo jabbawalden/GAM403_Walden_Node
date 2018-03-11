@@ -74,9 +74,10 @@ public class ProjectileBehaviour : MonoBehaviour {
             projExplosion.SetActive(true);
             destroy = true;
 
+
             if (destroy)
             {
-                Destroy(gameObject, 1);
+                Destroy(gameObject, 1f);
             }
 
         }
