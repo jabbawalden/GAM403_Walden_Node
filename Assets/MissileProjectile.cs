@@ -77,7 +77,7 @@ public class MissileProjectile : MonoBehaviour {
 
             if (collision.gameObject.tag == "PProj")
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                 Destroy(projectile);
                 speed = 0;
                 //projExplosion.SetActive(true);

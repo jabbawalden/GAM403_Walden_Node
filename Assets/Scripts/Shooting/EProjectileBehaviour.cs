@@ -43,7 +43,7 @@ public class EProjectileBehaviour : MonoBehaviour {
 
             if (destroy) 
             {
-                Destroy(gameObject, 1);
+                Destroy(gameObject, 2);
             }
 
         }
@@ -59,17 +59,17 @@ public class EProjectileBehaviour : MonoBehaviour {
                 playerHealth.health = playerHealth.health - 1;
                 speed = 0;
                 projExplosion.SetActive(true);
-                Destroy(gameObject, 1);
+                Destroy(gameObject, 2);
                 bc.enabled = false;
             }
 
             if (collision.gameObject.tag == "PProj")
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                 Destroy(projectile);
                 speed = 0;
                 projExplosion.SetActive(true);
-                Destroy(gameObject, 1);
+                Destroy(gameObject, 2);
                 bc.enabled = false;
             }
 
@@ -79,7 +79,7 @@ public class EProjectileBehaviour : MonoBehaviour {
                 Destroy(projectile);
                 speed = 0;
                 projExplosion.SetActive(true);
-                Destroy(gameObject, 1);
+                Destroy(gameObject, 2);
                 bc.enabled = false;
             }
         }

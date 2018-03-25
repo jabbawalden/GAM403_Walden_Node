@@ -109,7 +109,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 
             if (collision.gameObject.tag == "EProj")
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                 Destroy(projectile);
                 projExplosion.SetActive(true);
                 speed = 0;
