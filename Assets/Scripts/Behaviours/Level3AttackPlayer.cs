@@ -46,21 +46,6 @@ public class Level3AttackPlayer : MonoBehaviour {
 
     }
 
-    /*
-      if (targetTrigger.playerIsHere == true)
-     {
-         transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, deltaPosition);
-
-     }
-     else if (targetTrigger.playerIsHere == false)
-     {
-         transform.position = Vector2.MoveTowards(transform.position, originalPosition.position, deltaPosition);
-
-     }
-     
-    distanceX = player.position.x - transform.position.x;
-    distanceZ = player.position.z - transform.position.z;
-    transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x + distanceX, transform.position.y, transform.position.z + distanceZ), Time.deltaTime);
-    */
+    
 
 }

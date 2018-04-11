@@ -46,56 +46,48 @@ public class GameDataStorage : MonoBehaviour
     void Update()
     {
 
+        GameFileCheck();
+
+
+    }
+
+    public void GameFileCheck()
+    {
         if (File.Exists(Application.persistentDataPath + "/PlayerGameOne.dat"))
         {
-           
+
             g1exists = true;
-         
-        } else
+
+        }
+        else
         {
             g1exists = false;
-         
+
         }
 
         if (File.Exists(Application.persistentDataPath + "/PlayerGameTwo.dat"))
         {
 
             g2exists = true;
-           
+
         }
         else
         {
             g2exists = false;
-            
+
         }
 
         if (File.Exists(Application.persistentDataPath + "/PlayerGameThree.dat"))
         {
 
             g3exists = true;
-         
+
         }
         else
         {
             g3exists = false;
-           
-        }
-        /*
-        if (g1exists == false)
-        {
-            delete1 = true;
-        }
 
-        if (g2exists == false)
-        {
-            delete2 = true;
         }
-
-        if (g3exists == false)
-        {
-            delete3 = true;
-        }
-        */
     }
 
     public void SaveOne ()

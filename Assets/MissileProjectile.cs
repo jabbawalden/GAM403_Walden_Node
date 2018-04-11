@@ -22,6 +22,12 @@ public class MissileProjectile : MonoBehaviour {
 
     void Update()
     {
+        MissileFollow();
+
+    }
+
+    void MissileFollow ()
+    {
         transform.Rotate(Vector3.forward * rotSpeed);
 
         var playerPos = FindObjectOfType<PlayerMovement>().playerPosition;
@@ -35,7 +41,6 @@ public class MissileProjectile : MonoBehaviour {
 
         DestroyObjectDelayed();
         playerHealth = FindObjectOfType<PlayerMovement>();
-
     }
 
     void DestroyObjectDelayed()

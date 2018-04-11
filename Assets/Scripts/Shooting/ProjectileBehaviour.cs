@@ -11,6 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float delayTime;
     public BoxCollider2D bc;
     bool destroy;
+    public BossMain boss;
 
 
     void Start ()
@@ -38,7 +39,8 @@ public class ProjectileBehaviour : MonoBehaviour {
         //sends velocity in direciton 
 
         projExplosion.SetActive(false);
-        
+
+        boss = FindObjectOfType<BossMain>();
 
 	}
 
@@ -126,7 +128,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 
             if (collision.gameObject.tag == "Boss" )
             {
-                GameController.control.bossFinalHealth -= 1;
+                boss.bossHealth -= 1;
                 speed = 0;
                 bc.enabled = false;
                 projExplosion.SetActive(true);

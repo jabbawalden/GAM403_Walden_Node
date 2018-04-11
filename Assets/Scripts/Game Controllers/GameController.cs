@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
 
     public static GameController control;
+
     //sets to static - now accessible to all other scripts
     public int maxHealth = 3;
     public int techCollected = 0;
@@ -60,7 +61,7 @@ public class GameController : MonoBehaviour
         //will persist from scene to scene
         techHolder.SetActive(true);
         //turn on when game starts
-        bossFinalHealth = 100;
+        bossFinalHealth = 150;
 
     
 

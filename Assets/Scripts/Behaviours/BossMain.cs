@@ -11,6 +11,7 @@ public class BossMain : MonoBehaviour {
     //public Rigidbody2D rb;
     public int distance;
     public EnemyTrigger targetTrigger;
+    public GameObject heal1, heal2;
 
     //variables for boss move to player
 
@@ -18,13 +19,17 @@ public class BossMain : MonoBehaviour {
 
     private void Start()
     {
+        heal1.SetActive(false);
+        heal2.SetActive(false);
+
+        distance = 12;
+
         bossHealth = GameController.control.bossFinalHealth;
-        distance = 6;
     } 
 
     void Update()
     {
-        bossHealth = GameController.control.bossFinalHealth;
+        
 
         if (bossHealth == 0)
         {
@@ -34,31 +39,38 @@ public class BossMain : MonoBehaviour {
         if (bossShields.shieldsDown == true)
         {
             AttackPlayerMove();
+        } else
+        {
+            return;
         }
 
-        if (bossHealth == 80)
+        if (bossHealth == 110)
         {
-           
-            distance = 7;
+            bossShields.SecondShield = true;
+            heal1.SetActive(true);
+            distance = 4;
+        }
+
+        if (bossHealth == 70)
+        {
+            
+            distance = 11;
         }
 
         if (bossHealth == 50)
         {
-          
-            distance = 2;
+            heal2.SetActive(true);
+            distance = 8;
+            
         }
 
-        if (bossHealth == 30)
-        {
-       
-            distance = 4;
-        }
-
-        if (bossHealth == 10)
+        if (bossHealth == 20)
         {
            
             distance = 1;
         }
+
+
     }
 
     void AttackPlayerMove()
@@ -77,5 +89,6 @@ public class BossMain : MonoBehaviour {
 
         }
     }
+
 
 }
